@@ -1,0 +1,291 @@
+{
+  "LocaleSwitcher": {
+    "label": "Langue",
+    "en": "English",
+    "ar": "العربية",
+    "fr": "Français"
+  },
+  "DaysNav": {
+    "menuToggle": "Menu",
+    "overview": "Présentation",
+    "accommodation": "Hébergement",
+    "restaurant": "Restauration",
+    "gallery": "Galerie",
+    "contact": "Nous écrire",
+    "bookDirect": "Réserver en direct"
+  },
+  "DaysFooter": {
+    "address": "245/1, Old Mahabalipuram Road, Padur, Chennai – 603103.",
+    "contactTitle": "Contact",
+    "linksTitle": "Liens utiles",
+    "linkOverview": "Présentation",
+    "linkAccommodation": "Hébergement",
+    "linkRestaurant": "Restauration",
+    "linkGallery": "Galerie",
+    "linkContact": "Nous écrire",
+    "socialTitle": "Réseaux",
+    "copyright": "© {year} Crossway. Tous droits réservés."
+  },
+  "DaysBooking": {
+    "title": "Réserver votre séjour",
+    "checkIn": "Arrivée",
+    "checkOut": "Départ",
+    "rooms": "Chambres",
+    "adults": "Adultes",
+    "children": "Enfants",
+    "submit": "Rechercher",
+    "placeholderDate": "Choisir une date",
+    "childNone": "—"
+  },
+  "DaysHome": {
+    "hero": {
+      "eyebrow": "Crossway Days Hotel · OMR Chennai",
+      "title": "Des équipements pensés pour vivre avec joie",
+      "subtitle": "Nous redéfinissons une nouvelle dimension de luxe et de détente"
+    },
+    "overview": {
+      "title": "Crossway Days Hotel",
+      "p1": "Le Crossway Days Hotel Chennai OMR allie hospitalité supérieure et équipements ultramodernes pour une expérience inoubliable. L’hôtel est situé près de l’université Hindustan, du Chettinad Hospital et des nouveaux quartiers d’affaires de Siruseri SIPCOT, à 30 minutes en voiture du site archéologique de Mahabalipuram.",
+      "p2": "Pour un voyage d’affaires ou un séjour local, cet hôtel de 57 chambres propose des chambres confortables et un service attentionné. Ses restaurants, son bar et son spa en font un lieu idéal pour séjourner, se restaurer et se détendre."
+    },
+    "rooms": {
+      "sectionTitle": "Hébergement",
+      "standard": {
+        "title": "Chambre Standard",
+        "description": "Ces chambres répondent aux besoins professionnels en optimisant l’espace, le confort et la qualité — idéales pour les voyageurs seuls ou les couples. La vue sur la verdure, l’horizon marin et le lever du soleil est saisissante.",
+        "specs": [
+          "Lit king ou jumeaux",
+          "250 pi²",
+          "Wi‑Fi gratuit",
+          "Fumeur ou non-fumeur"
+        ],
+        "amenities": [
+          "Wi‑Fi",
+          "Petit-déjeuner",
+          "Climatisation",
+          "Téléphones",
+          "Mini-bar",
+          "Thé et cafetière",
+          "Fer et planche à repasser",
+          "Télévision satellite",
+          "Coffre-fort électronique",
+          "Sèche-cheveux",
+          "Miroir de rasage",
+          "Bureau",
+          "Miroir de salle de bain anti-buée",
+          "Miroir en pied",
+          "Porte-bagages",
+          "Placard"
+        ],
+        "amenitiesHeading": "Équipements",
+        "detailsCta": "Photos et détails",
+        "bookNow": "Réserver"
+      },
+      "deluxe": {
+        "title": "Chambre Deluxe",
+        "description": "Toutes options modernes, ces chambres plus spacieuses conviennent aussi bien aux loisirs qu’aux affaires. La campagne environnante et le coucher de soleil doré sont à ne pas manquer.",
+        "specs": [
+          "Lit king ou jumeaux",
+          "410 pi²",
+          "Baignoire ou douche",
+          "Fumeur ou non-fumeur"
+        ],
+        "amenities": [
+          "Wi‑Fi",
+          "Petit-déjeuner",
+          "Climatisation",
+          "Téléphones",
+          "Mini-bar",
+          "Thé et cafetière",
+          "Fer et planche à repasser",
+          "Télévision satellite",
+          "Coffre-fort électronique",
+          "Sèche-cheveux",
+          "Miroir de rasage",
+          "Bureau",
+          "Miroir de salle de bain anti-buée",
+          "Miroir en pied",
+          "Porte-bagages",
+          "Placard"
+        ],
+        "amenitiesHeading": "Équipements",
+        "detailsCta": "Photos et détails",
+        "bookNow": "Réserver"
+      },
+      "suite": {
+        "title": "Suite",
+        "description": "Cette suite offre le confort d’une résidence privée : chambre principale avec salle de bains, salon avec toilettes — idéale pour un couple, une famille de quatre ou pour recevoir tout en préservant l’intimité de la chambre. Le coucher de soleil se savoure depuis votre cocon.",
+        "specs": [
+          "Lit king ou jumeaux",
+          "810 pi²",
+          "Wi‑Fi gratuit",
+          "Fumeur ou non-fumeur"
+        ],
+        "amenities": [
+          "Wi‑Fi",
+          "Petit-déjeuner",
+          "Climatisation",
+          "Téléphones",
+          "Mini-bar",
+          "Thé et cafetière",
+          "Fer et planche à repasser",
+          "Coffre-fort électronique",
+          "Sèche-cheveux",
+          "Miroir de rasage",
+          "Bureau",
+          "Miroir de salle de bain anti-buée",
+          "Miroir en pied",
+          "Porte-bagages",
+          "Placard",
+          "Deux télévisions satellite",
+          "Salon",
+          "Toilettes d’appoint"
+        ],
+        "amenitiesHeading": "Équipements",
+        "detailsCta": "Photos et détails",
+        "bookNow": "Réserver"
+      }
+    },
+    "dining": {
+      "sectionTitle": "Restaurants et expériences",
+      "nutcracker": {
+        "title": "Restaurant multi-cuisine Nutcracker",
+        "paragraphs": [
+          "Nutcracker propose une cuisine d’exception dans une ambiance chic inspirée des grandes tables du monde. Notre brigade maîtrise un spectre allant de l’Inde à l’Asie de l’Est en passant par la cuisine continentale, toujours avec une touche contemporaine. Nos buffets mettent en scène des comptoirs live, des spécialités locales aux saveurs internationales. Un menu japonais exclusif est également proposé."
+        ]
+      },
+      "svanna": {
+        "title": "Svanna — restaurant sur le toit",
+        "paragraphs": [
+          "Savourez des grillades généreuses dans le restaurant rooftop le plus prisé du Crossway Days Hotel Chennai OMR. Ce cadre extérieur élégant promet des saveurs irrésistibles, une vue magnifique sur le littoral de Chennai et une atmosphère paisible pour un dîner-cocktail romantique. Profitez des retransmissions sportives sur un immense mur LED extérieur."
+        ]
+      },
+      "rideBar": {
+        "title": "Ride Bar",
+        "paragraphs": [
+          "Ambiance contemporaine et carte de spiritueux soignée : Ride Bar est l’adresse idéale. Une atmosphère vibrante, sophistiquée et pleine de vie. Détendez-vous autour des meilleures références du monde — affaires entre pros ou soirée entre amis, nos barmen exaucent vos envies."
+        ]
+      },
+      "banquet": {
+        "title": "Salles de réception",
+        "paragraphs": [
+          "Sunrise 1 accueille des réunions conviviales entre amis et famille. Environ 850 pi², elle convient aux anniversaires et petites fêtes.",
+          "Sunrise 2 peut accueillir une centaine d’invités : fiançailles, anniversaires, événements familiaux ou réunions d’entreprise. Technologie à jour, équipements modernes et espace pré-réception."
+        ]
+      },
+      "spa": {
+        "title": "Viviana SPA & Salon",
+        "paragraphs": [
+          "Ressourcez-vous avec les massages et soins Viviana : massages anti-stress, gommages et soins du visage d’exception."
+        ]
+      },
+      "gym": {
+        "title": "Salle de fitness",
+        "paragraphs": [
+          "La salle de sport ultramoderne du Crossway Days Hotel OMR Chennai compte parmi les meilleures de la ville pour une expérience fitness complète."
+        ]
+      }
+    },
+    "gallery": {
+      "sectionTitle": "Galerie",
+      "intro": "Un aperçu du Crossway Days Hotel — espaces sur l’OMR à Chennai pour séjours, restauration et événements.",
+      "slideshowHint": "Diaporama automatique — survolez l’image pour mettre en pause. Flèches ou vignettes pour naviguer.",
+      "prev": "Image précédente",
+      "next": "Image suivante",
+      "dotsLabel": "Indicateurs de diapositives",
+      "goToSlide": "Aller à la diapositive {n}"
+    },
+    "testimonials": {
+      "title": "Ce que disent nos clients",
+      "items": [
+        {
+          "name": "Jayashree V",
+          "quote": "Nous avons adoré notre séjour ! Ambiance, cuisine et accueil excellents. Merci à M. Venkatesh et M. Ganesh pour l’organisation de notre événement."
+        },
+        {
+          "name": "Kareena Bordoloi",
+          "quote": "Troisième visite et toujours aussi satisfaisante. Un soir, malade, j’ai demandé des médicaments à la réception : merci à Kunal pour sa réactivité tard dans la nuit. Service au top pour un hôtel de cette taille. Excellents chefs."
+        },
+        {
+          "name": "Harish Balasubramaniam",
+          "quote": "Parfait pour un court séjour. Chambres propres, équipe attentive. Je recommande vivement dans ce quartier. Excellent rapport qualité-prix."
+        },
+        {
+          "name": "Jeyakumar Doraisamy",
+          "quote": "Séjour très agréable au Crossway Days OMR : confort, sécurité et service client remarquable. Merci à toute l’équipe."
+        },
+        {
+          "name": "B.R. Karthik Subramaniam",
+          "quote": "Bar et restaurant au top, service et cuisine excellents. Hospitalité exceptionnelle — merci à M. Venkatesh et son équipe pour ce moment unique."
+        },
+        {
+          "name": "Satyajit Dilip",
+          "quote": "Personnel courtois du réceptionniste au groom. Cuisine variée et savoureuse. Je recommande, même si l’hôtel est éloigné du centre de Chennai."
+        }
+      ]
+    },
+    "nearby": {
+      "title": "À proximité",
+      "subtitle": "Distances routières indicatives — la réception peut vous conseiller itinéraires et horaires.",
+      "landmarksHeading": "Sites et distances indicatives",
+      "essentials": [
+        {
+          "label": "Aéroports",
+          "detail": "Aéroport le plus proche — Chennai",
+          "distance": "28 km"
+        },
+        {
+          "label": "Gare ferroviaire",
+          "detail": "La plus proche — Tambaram, Chennai",
+          "distance": "28 km"
+        },
+        {
+          "label": "Hôpital ou clinique",
+          "detail": "Le plus proche — Chettinad Health City",
+          "distance": "2 km"
+        }
+      ],
+      "landmarks": [
+        {
+          "name": "Musée DakshinaChitra",
+          "distance": "15 km"
+        },
+        {
+          "name": "Plage de Kovalam",
+          "distance": "06 km"
+        },
+        {
+          "name": "Mamallapuram",
+          "distance": "25 km"
+        },
+        {
+          "name": "VGP Snow Kingdom",
+          "distance": "23 km"
+        },
+        {
+          "name": "Phoenix Mall",
+          "distance": "27 km"
+        }
+      ]
+    },
+    "contact": {
+      "title": "Écrivez-nous",
+      "name": "Nom",
+      "email": "E-mail",
+      "message": "Message",
+      "submit": "Envoyer",
+      "sending": "Envoi…",
+      "success": "Merci — votre message a bien été reçu.",
+      "error": "Une erreur s’est produite. Réessayez ou écrivez à contact@crosswayhotels.com",
+      "mapTitle": "Plan et itinéraire"
+    }
+  },
+  "DaysExperience": {
+    "breadcrumbHome": "Accueil",
+    "breadcrumbExperiences": "Expériences",
+    "readMore": "Découvrir en détail",
+    "back": "Retour aux expériences",
+    "heroEyebrow": "Crossway Days Hotel · OMR Chennai",
+    "galleryHeading": "Galerie"
+  }
+}

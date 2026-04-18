@@ -1,0 +1,127 @@
+@use "@/styles/tokens" as *;
+
+.footer {
+  position: relative;
+  background: $color-canvas-deep;
+  color: rgba(255, 252, 246, 0.78);
+  padding: $space-section 0 $space-tight;
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  inset: -40% -20% auto;
+  height: 70%;
+  background: radial-gradient(ellipse at 30% 0%, rgba(176, 125, 75, 0.22), transparent 55%);
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+
+  @media (min-width: 720px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 1.2fr 1fr 0.9fr 0.7fr;
+    gap: 1.75rem;
+  }
+}
+
+.logo {
+  margin-bottom: 1rem;
+  opacity: 0.97;
+  height: auto;
+  width: min(220px, 72vw);
+  object-fit: contain;
+  filter: drop-shadow(0 2px 20px rgba(0, 0, 0, 0.25));
+}
+
+.address {
+  font-size: $text-sm;
+  line-height: $leading-relaxed;
+  letter-spacing: $tracking-wide;
+  color: rgba(255, 252, 246, 0.65);
+  margin: 0;
+}
+
+.title {
+  font-size: $text-xs;
+  font-weight: 600;
+  letter-spacing: $tracking-widest;
+  text-transform: uppercase;
+  color: rgba(255, 252, 246, 0.45);
+  margin: 0 0 0.75rem;
+}
+
+.muted {
+  font-size: $text-sm;
+  margin: 0 0 0.35rem;
+
+  a:hover {
+    color: $color-accent-soft;
+  }
+}
+
+.links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    margin-bottom: 0.4rem;
+  }
+
+  a {
+    font-size: $text-sm;
+    letter-spacing: $tracking-wide;
+
+    &:hover {
+      color: $color-accent-soft;
+    }
+  }
+}
+
+.social {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 252, 246, 0.12);
+    font-size: $text-sm;
+    transition: border-color 0.2s, color 0.2s;
+
+    &:hover {
+      border-color: rgba(176, 125, 75, 0.45);
+      color: $color-accent-soft;
+    }
+  }
+}
+
+.bottom {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 252, 246, 0.08);
+  font-size: $text-xs;
+  letter-spacing: $tracking-wide;
+  color: rgba(255, 252, 246, 0.45);
+}

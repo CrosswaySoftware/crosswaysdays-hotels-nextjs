@@ -1,0 +1,17 @@
+@use "@/styles/tokens" as *;
+
+.shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    rgba($color-accent, 0.035) 0%,
+    transparent min(32vh, 420px)
+  );
+}

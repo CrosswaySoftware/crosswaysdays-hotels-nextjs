@@ -1,0 +1,291 @@
+{
+  "LocaleSwitcher": {
+    "label": "Language",
+    "en": "English",
+    "ar": "العربية",
+    "fr": "Français"
+  },
+  "DaysNav": {
+    "menuToggle": "Menu",
+    "overview": "Overview",
+    "accommodation": "Accommodation",
+    "restaurant": "Restaurant",
+    "gallery": "Gallery",
+    "contact": "Write to Us",
+    "bookDirect": "Book Direct"
+  },
+  "DaysFooter": {
+    "address": "245/1, Old Mahabalipuram Road, Padur, Chennai – 603103.",
+    "contactTitle": "Contact",
+    "linksTitle": "Useful links",
+    "linkOverview": "Overview",
+    "linkAccommodation": "Accommodation",
+    "linkRestaurant": "Restaurant",
+    "linkGallery": "Gallery",
+    "linkContact": "Write to Us",
+    "socialTitle": "Social",
+    "copyright": "© {year} Crossway. All rights reserved."
+  },
+  "DaysBooking": {
+    "title": "Book your stay",
+    "checkIn": "Check in",
+    "checkOut": "Check out",
+    "rooms": "Rooms",
+    "adults": "Adults",
+    "children": "Children",
+    "submit": "Search",
+    "placeholderDate": "Select date",
+    "childNone": "—"
+  },
+  "DaysHome": {
+    "hero": {
+      "eyebrow": "Crossway Days Hotel · OMR Chennai",
+      "title": "Facilities designed to live with joy",
+      "subtitle": "We aim to redefine a new dimension of luxury and relaxation"
+    },
+    "overview": {
+      "title": "Crossway Days Hotel",
+      "p1": "Crossway Days Hotel Chennai OMR combines superior hospitality with ultra-modern amenities to offer an experience of a lifetime. The hotel is located next to the Hindustan University, close to the Chettinad Hospital as well as the new business districts of Siruseri SIPCOT and a 30 minutes drive to the famous archaeological site Mahabalipuram.",
+      "p2": "Be it a business trip or a staycation this 57 room hotel offers vibrant and comfortable rooms with great services offered. Its in house restaurants and bar along with its Spa is a great place to stay, eat and rest."
+    },
+    "rooms": {
+      "sectionTitle": "Accommodation",
+      "standard": {
+        "title": "Standard Room",
+        "description": "These rooms cater to the convenience of business needs in a compact manner maximizing space with quality and comfort, ideal for individual travellers or couples. The view from these rooms is mesmerizing with the sight of extended green field, the sea horizon and beautiful sunrise.",
+        "specs": [
+          "King or 1 Twin Bed",
+          "250 ft²",
+          "Free Wi‑Fi",
+          "Smoking or Non-Smoking"
+        ],
+        "amenities": [
+          "Wifi",
+          "Breakfast",
+          "Air Conditioning",
+          "Telephones",
+          "Mini Bar",
+          "Tea and Coffee Maker",
+          "Iron and Ironing Board",
+          "Satellite Television",
+          "Electronic Safe",
+          "Hair-dryer",
+          "Shaving Mirror",
+          "Working Desk",
+          "Fog Free Bathroom Mirror",
+          "Full Length Mirror",
+          "Luggage Rack",
+          "Closet"
+        ],
+        "amenitiesHeading": "Room amenities",
+        "detailsCta": "Room photos and details",
+        "bookNow": "Book now"
+      },
+      "deluxe": {
+        "title": "Deluxe Room",
+        "description": "Equipped with all modern amenities the rooms are more spacious and ideal for a leisure as well as business travellers. The beauty of the developing countryside and a golden sunset can be the most pleasant sight not to be missed.",
+        "specs": [
+          "King or 1 Twin Bed",
+          "410 ft²",
+          "Bathtub or Shower",
+          "Smoking or Non-Smoking"
+        ],
+        "amenities": [
+          "Wifi",
+          "Breakfast",
+          "Air Conditioning",
+          "Telephones",
+          "Mini Bar",
+          "Tea and Coffee Maker",
+          "Iron and Ironing Board",
+          "Satellite Television",
+          "Electronic Safe",
+          "Hair-dryer",
+          "Shaving Mirror",
+          "Working Desk",
+          "Fog Free Bathroom Mirror",
+          "Full Length Mirror",
+          "Luggage Rack",
+          "Closet"
+        ],
+        "amenitiesHeading": "Room amenities",
+        "detailsCta": "Room photos and details",
+        "bookNow": "Book now"
+      },
+      "suite": {
+        "title": "Suite Room",
+        "description": "This type of room exemplifies lavish comfort similar to a private home. It comes with a master bedroom and attached bath, a living area with toilet ideal for a couple or a family of four or entertaining guests keeping the privacy of your bedroom. A stunning view of the sunset is something sure to be enjoyed from the cozy comfort of your room.",
+        "specs": [
+          "King or 1 Twin Bed",
+          "810 ft²",
+          "Free Wi‑Fi",
+          "Smoking or Non-Smoking"
+        ],
+        "amenities": [
+          "Wifi",
+          "Breakfast",
+          "Air Conditioning",
+          "Telephones",
+          "Mini Bar",
+          "Tea and Coffee Maker",
+          "Iron and Ironing Board",
+          "Electronic Safe",
+          "Hair-dryer",
+          "Shaving Mirror",
+          "Working Desk",
+          "Fog Free Bathroom Mirror",
+          "Full Length Mirror",
+          "Luggage Rack",
+          "Closet",
+          "Two Satellite Television",
+          "Drawing Room",
+          "Powder Room"
+        ],
+        "amenitiesHeading": "Room amenities",
+        "detailsCta": "Room photos and details",
+        "bookNow": "Book now"
+      }
+    },
+    "dining": {
+      "sectionTitle": "Restaurant & experiences",
+      "nutcracker": {
+        "title": "Nutcracker Multi-Cuisine Restaurant",
+        "paragraphs": [
+          "Nutcracker is the place to experience speciality food served in chic ambiance inspired from world cuisines. Our skilled culinary team has experience serving a spectrum of cuisines from Indian to East Asian and Continental—all with a contemporary flair. Our elaborate buffets feature enticing live-cooking stations ranging from local delicacies to international gourmet delights are sure to treat your taste buds. This restaurant offers an exclusive Japanese menu for its guests."
+        ]
+      },
+      "svanna": {
+        "title": "Svanna — Rooftop Restaurant",
+        "paragraphs": [
+          "Treat yourself to sumptuous grill at the Crossway Days Hotel Chennai OMR's popular rooftop restaurant. This plush & beautiful alfresco restaurant guarantees lip-smacking food, splendid views of Chennai’s Coastal line and a peaceful atmosphere for a romantic cocktail dinner. Experience live sporting actions with its giant outdoor LED wall for real life viewing."
+        ]
+      },
+      "rideBar": {
+        "title": "Ride Bar",
+        "paragraphs": [
+          "With a contemporary aura and the finest selection of spirits, Ride Bar is the ideal place for you to head to. Experience it to believe it’s vibrant, sophisticated and full of life ambiance. Sit back and drink out while life takes you on a Ride. It is the place to unwind with the finest choice of spirits from around the world. Strike a business deal or just hang out with friends as our bartenders fulfill your every whim."
+        ]
+      },
+      "banquet": {
+        "title": "Banquet",
+        "paragraphs": [
+          "Sunrise 1 is specifically designed to accommodate an intimate gathering of friends and family. Around 850 sq. feet, this hall is perfect for birthdays, small parties and get-togethers.",
+          "Sunrise 2 can host around hundred guests and is a great venue for engagements, birthdays, family functions and even corporate meeting and team discussions. Fully equipped with latest technology and modern amenities, Sunrise 2 also boasts of a pre-function area."
+        ]
+      },
+      "spa": {
+        "title": "Viviana SPA & Salon",
+        "paragraphs": [
+          "Rejuvenate your body with enlivening massages and treatments from Viviana. Viviana is the place to be for stress-relieving massages, body scrubs and exotic facials."
+        ]
+      },
+      "gym": {
+        "title": "Fitness Center",
+        "paragraphs": [
+          "The state of the art gymnasium at Crossway Days Hotel, OMR-Chennai is one of the best in the city offering a complete fitness experience."
+        ]
+      }
+    },
+    "gallery": {
+      "sectionTitle": "Gallery",
+      "intro": "A glimpse of Crossway Days Hotel — spaces across OMR Chennai for stays, dining, and events.",
+      "slideshowHint": "Autoplay slideshow — pause by hovering the image. Use arrows or thumbnails to explore.",
+      "prev": "Previous image",
+      "next": "Next image",
+      "dotsLabel": "Slide indicators",
+      "goToSlide": "Go to slide {n}"
+    },
+    "testimonials": {
+      "title": "What our customers say",
+      "items": [
+        {
+          "name": "Jayashree V",
+          "quote": "We loved and enjoyed our stay! Ambience, food, hospitality were excellent. Special thanks to Mr. Venkatesh and Mr. Ganesh who helped us to organize our event in a successful way."
+        },
+        {
+          "name": "Kareena Bordoloi",
+          "quote": "It was nice to visit the hotel again for the 3rd time and it was very good to stay in the hotel. As I was not well I asked the guy on reception to get me some medicine in the night time and I thank Kunal for helping in late night to get the medicines arranged for me. Being a small hotel the service quality is on the peak. Great chefs as well in the hotel."
+        },
+        {
+          "name": "Harish Balasubramaniam",
+          "quote": "Good for a couple night stay. Rooms were clean and fresh, very courteous and responsive staff. Would highly recommend anybody for a decent place in that area. VALUE FOR MONEY."
+        },
+        {
+          "name": "Jeyakumar Doraisamy",
+          "quote": "We enjoyed much in Crossway Days Hotel OMR-Chennai. It is really comfortable and safe to any guest. And the customer service is so good. They take care like anything. It is really a super place to stay in DAYS HOTEL CHENNAI OMR. Thanks to all staff of Crossway Days Hotel."
+        },
+        {
+          "name": "B.R. Karthik Subramaniam",
+          "quote": "We have been to the bar and the restaurant, the service and the food are excellent. More than that, the staff's hospitality is exceptional. We want to specifically mention Mr. Venkatesh and his team. We really appreciate your kind gesture and top of the class service. Once again thanks for making our day uniquely awesome."
+        },
+        {
+          "name": "Satyajit Dilip",
+          "quote": "The staff were very courteous and friendly. We loved the way they treated us, everyone from the receptionist to the bellboy. Food is very good, wide variety. Highly recommend to stay at this hotel, though it's far from main Chennai."
+        }
+      ]
+    },
+    "nearby": {
+      "title": "Nearby",
+      "subtitle": "Approximate road distances — our front desk can suggest the best routes and timing.",
+      "landmarksHeading": "Landmarks & distance",
+      "essentials": [
+        {
+          "label": "Airports",
+          "detail": "Nearest airport — Chennai",
+          "distance": "28 km"
+        },
+        {
+          "label": "Railway station",
+          "detail": "Nearest — Tambaram, Chennai",
+          "distance": "28 km"
+        },
+        {
+          "label": "Hospital or clinic",
+          "detail": "Nearest — Chettinad Health City",
+          "distance": "2 km"
+        }
+      ],
+      "landmarks": [
+        {
+          "name": "DakshinaChitra Museum",
+          "distance": "15 km"
+        },
+        {
+          "name": "Kovalam Beach",
+          "distance": "06 km"
+        },
+        {
+          "name": "Mamallapuram",
+          "distance": "25 km"
+        },
+        {
+          "name": "VGP Snow Kingdom",
+          "distance": "23 km"
+        },
+        {
+          "name": "Phoenix Mall",
+          "distance": "27 km"
+        }
+      ]
+    },
+    "contact": {
+      "title": "Write to Us",
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send message",
+      "sending": "Sending…",
+      "success": "Thank you — your message has been received.",
+      "error": "Something went wrong. Please try again or email contact@crosswayhotels.com",
+      "mapTitle": "Maps & directions"
+    }
+  },
+  "DaysExperience": {
+    "breadcrumbHome": "Home",
+    "breadcrumbExperiences": "Experiences",
+    "readMore": "Explore full story",
+    "back": "Back to experiences",
+    "heroEyebrow": "Crossway Days Hotel · OMR Chennai",
+    "galleryHeading": "Gallery"
+  }
+}

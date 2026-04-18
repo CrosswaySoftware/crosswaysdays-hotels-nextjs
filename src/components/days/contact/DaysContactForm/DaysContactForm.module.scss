@@ -1,0 +1,96 @@
+@use "@/styles/tokens" as *;
+
+.form {
+  max-width: 42rem;
+}
+
+.feedbackOk {
+  color: #8a5c32;
+  font-size: $text-sm;
+  margin-bottom: 1rem;
+}
+
+.feedbackErr {
+  color: #8b2942;
+  font-size: $text-sm;
+  margin-bottom: 1rem;
+}
+
+.row {
+  display: grid;
+  gap: 1rem;
+
+  @media (min-width: 640px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.label {
+  font-size: $text-xs;
+  font-weight: 600;
+  letter-spacing: $tracking-wider;
+  text-transform: uppercase;
+  color: $color-ink-muted;
+}
+
+.input,
+.textarea {
+  font: inherit;
+  font-size: $text-base;
+  padding: 0.75rem 0.9rem;
+  border-radius: $radius-md;
+  border: 1px solid rgba(20, 18, 16, 0.14);
+  background: rgba(255, 252, 246, 0.85);
+  color: $color-ink;
+
+  &:focus {
+    outline: 2px solid $color-accent-soft;
+    outline-offset: 1px;
+  }
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.submit {
+  font-size: $text-xs;
+  font-weight: 600;
+  letter-spacing: $tracking-widest;
+  text-transform: uppercase;
+  color: $color-canvas-deep;
+  background: linear-gradient(120deg, $color-accent-soft, $color-glow);
+  border: none;
+  border-radius: $radius-md;
+  padding: 0.85rem 1.5rem;
+  cursor: pointer;
+  transition: transform 0.25s $ease-out-expo, opacity 0.2s;
+
+  &:disabled {
+    opacity: 0.65;
+    cursor: wait;
+  }
+
+  &:hover:not(:disabled) {
+    transform: translateY(-1px);
+  }
+}

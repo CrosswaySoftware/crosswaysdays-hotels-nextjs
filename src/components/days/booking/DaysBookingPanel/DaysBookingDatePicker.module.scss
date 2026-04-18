@@ -1,0 +1,79 @@
+@use "@/styles/tokens" as *;
+
+.popover {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 120;
+  padding: 0.65rem;
+  background: linear-gradient(165deg, #fffef9 0%, #f2ede6 100%);
+  border: 1px solid rgba(20, 18, 16, 0.12);
+  border-radius: $radius-md;
+  box-shadow: $shadow-soft;
+  max-width: min(100vw - 2rem, 320px);
+
+  [dir="rtl"] & {
+    left: auto;
+    right: 0;
+  }
+}
+
+/* Theme variables for react-day-picker (.rdp-root) */
+.themedPicker {
+  --rdp-accent-color: #{$color-accent};
+  --rdp-accent-background-color: rgba(232, 212, 188, 0.55);
+  --rdp-day-height: 38px;
+  --rdp-day-width: 38px;
+  --rdp-day_button-border-radius: 8px;
+  --rdp-day_button-height: 36px;
+  --rdp-day_button-width: 36px;
+  --rdp-today-color: #{$color-accent};
+  --rdp-nav_button-height: 2rem;
+  --rdp-nav_button-width: 2rem;
+  --rdp-weekday-padding: 0.35rem 0;
+  --rdp-disabled-opacity: 0.35;
+  --rdp-outside-opacity: 0.45;
+
+  font-family: $font-sans;
+  font-size: $text-sm;
+  line-height: $leading-normal;
+  color: $color-ink;
+
+  :global(.rdp-month_caption) {
+    font-family: $font-sans;
+    font-size: $text-lg;
+    font-weight: 600;
+    line-height: $leading-snug;
+    letter-spacing: $tracking-snug;
+    color: $color-ink;
+  }
+
+  :global(.rdp-weekday) {
+    font-size: $text-xs;
+    font-weight: 600;
+    letter-spacing: $tracking-wider;
+    line-height: $leading-normal;
+    text-transform: uppercase;
+    color: $color-ink-muted;
+  }
+
+  :global(.rdp-day_button) {
+    font-weight: 500;
+    line-height: $leading-none;
+  }
+
+  :global(.rdp-selected .rdp-day_button) {
+    color: $color-white;
+  }
+}
+
+.calendarIcon {
+  display: block;
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+  opacity: 0.5;
+  margin-right: -0.5rem;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23141210' stroke-width='1.5'%3E%3Cpath d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+}

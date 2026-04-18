@@ -1,0 +1,263 @@
+@use "@/styles/tokens" as *;
+
+@mixin display-heading {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+  font-weight: 600;
+  letter-spacing: $tracking-tight;
+  line-height: $leading-tight;
+}
+
+@mixin display-heading-rtl {
+  :global(html[dir="rtl"]) & {
+    font-family: var(--font-arabic), sans-serif;
+    letter-spacing: $tracking-normal;
+    line-height: $leading-snug;
+  }
+}
+
+.nearby {
+  position: relative;
+  padding: clamp(3.5rem, 10vw, 6.75rem) 0;
+  overflow: clip;
+}
+
+.nearbyAmbient {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 90% 45% at 50% -5%, rgba($color-accent, 0.07), transparent 55%),
+    linear-gradient(180deg, rgba(255, 252, 246, 0.4) 0%, transparent 35%);
+  border-top: 1px solid rgba(20, 18, 16, 0.06);
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 1.75rem);
+}
+
+.header {
+  text-align: center;
+  max-width: 42rem;
+  margin: 0 auto clamp(2.5rem, 6vw, 3.5rem);
+}
+
+.title {
+  @include display-heading;
+  @include display-heading-rtl;
+  font-size: clamp(2rem, 4.5vw, 2.85rem);
+  color: $color-ink;
+  margin: 0 0 1rem;
+}
+
+.titleRule {
+  display: block;
+  width: 52px;
+  height: 2px;
+  margin: 0 auto 1.15rem;
+  background: linear-gradient(90deg, transparent, $color-accent-soft, transparent);
+  border-radius: 2px;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: $text-sm;
+  line-height: $leading-relaxed;
+  color: $color-ink-muted;
+  letter-spacing: $tracking-snug;
+}
+
+.essentials {
+  display: grid;
+  gap: 1.25rem;
+
+  @media (min-width: 780px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.35rem;
+  }
+}
+
+.essentialCard {
+  position: relative;
+  overflow: hidden;
+  padding: 1.65rem 1.4rem 1.5rem 1.55rem;
+  border-radius: $radius-lg;
+  background:
+    linear-gradient(145deg, rgba(255, 252, 246, 0.97) 0%, rgba(248, 244, 237, 0.88) 100%);
+  border: 1px solid rgba(20, 18, 16, 0.07);
+  box-shadow:
+    0 1px 0 rgba(255, 252, 246, 0.95) inset,
+    0 22px 56px rgba(8, 7, 6, 0.07);
+  min-height: 168px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.45s $ease-out-expo, box-shadow 0.45s $ease-out-expo, border-color 0.35s;
+
+  &:hover {
+    transform: translateY(-3px);
+    border-color: rgba(176, 125, 75, 0.22);
+    box-shadow:
+      0 1px 0 rgba(255, 252, 246, 1) inset,
+      0 32px 72px rgba(8, 7, 6, 0.1);
+  }
+}
+
+/* Flush strip: parent overflow + card radius clips top/bottom to match corners */
+.essentialAccent {
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, $color-accent 0%, $color-accent-soft 55%, rgba(201, 162, 122, 0.25) 100%);
+}
+
+.essentialLabel {
+  margin: 0 0 0.65rem;
+  font-size: $text-xs;
+  font-weight: 600;
+  letter-spacing: $tracking-widest;
+  text-transform: uppercase;
+  color: $color-accent;
+}
+
+.essentialDetail {
+  margin: 0 0 auto;
+  font-size: $text-sm;
+  line-height: $leading-relaxed;
+  color: $color-ink-muted;
+  flex: 1;
+}
+
+.essentialDistance {
+  margin: 1rem 0 0;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(20, 18, 16, 0.06);
+}
+
+.essentialDistanceValue {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+  font-size: clamp(1.5rem, 3vw, 1.85rem);
+  font-weight: 600;
+  letter-spacing: $tracking-tight;
+  color: $color-ink;
+  font-variant-numeric: tabular-nums;
+}
+
+:global(html[dir="rtl"]) .essentialDistanceValue {
+  font-family: var(--font-arabic), sans-serif;
+  letter-spacing: $tracking-normal;
+}
+
+.landmarksBoard {
+  margin-top: clamp(2rem, 5vw, 2.75rem);
+  padding: clamp(1.5rem, 4vw, 2rem) clamp(1.25rem, 3vw, 2rem);
+  border-radius: $radius-lg;
+  background:
+    linear-gradient(160deg, rgba(255, 252, 246, 0.55) 0%, rgba(240, 236, 228, 0.45) 100%);
+  border: 1px solid rgba(20, 18, 16, 0.08);
+  box-shadow:
+    0 1px 0 rgba(255, 252, 246, 0.9) inset,
+    0 24px 60px rgba(8, 7, 6, 0.06);
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(176, 125, 75, 0.2), transparent 40%, rgba(176, 125, 75, 0.08));
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+}
+
+.landmarksHeading {
+  @include display-heading;
+  @include display-heading-rtl;
+  font-size: $text-lg;
+  color: $color-ink;
+  margin: 0 0 1.15rem;
+  letter-spacing: $tracking-snug;
+}
+
+.landmarkList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.landmarkRow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(20, 18, 16, 0.07);
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  &:first-child {
+    padding-top: 0;
+  }
+}
+
+.landmarkName {
+  flex: 0 1 auto;
+  font-size: $text-sm;
+  line-height: $leading-snug;
+  color: $color-ink-muted;
+  max-width: min(100%, 70%);
+}
+
+.landmarkFiller {
+  flex: 1;
+  min-width: 0.75rem;
+  align-self: center;
+  height: 0;
+  border-bottom: 1px dotted rgba(20, 18, 16, 0.14);
+  transform: translateY(-0.15em);
+}
+
+.landmarkDist {
+  flex-shrink: 0;
+  font-size: $text-sm;
+  font-weight: 600;
+  letter-spacing: $tracking-wide;
+  color: $color-accent;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+@media (max-width: 520px) {
+  .landmarkRow {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.35rem 0.5rem;
+    align-items: baseline;
+  }
+
+  .landmarkName {
+    grid-column: 1 / -1;
+    max-width: 100%;
+  }
+
+  .landmarkFiller {
+    display: none;
+  }
+
+  .landmarkDist {
+    grid-column: 1 / -1;
+    justify-self: end;
+    margin-top: -0.15rem;
+  }
+}

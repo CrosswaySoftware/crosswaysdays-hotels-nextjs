@@ -1,0 +1,114 @@
+@use "@/styles/tokens" as *;
+
+.section {
+  padding: clamp(2.5rem, 7vw, 4rem) 0;
+  background: linear-gradient(180deg, rgba(255, 252, 246, 0.55) 0%, rgba(236, 232, 224, 0.4) 100%);
+  border-block: 1px solid rgba(20, 18, 16, 0.05);
+}
+
+.heading {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+  font-size: clamp(1.65rem, 3.5vw, 2.25rem);
+  font-weight: 600;
+  letter-spacing: $tracking-tight;
+  text-align: center;
+  margin: 0 auto 2.25rem;
+  max-width: $container-max;
+  padding: 0 1.25rem 1rem;
+  color: $color-ink;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 48px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, $color-accent, transparent);
+    border-radius: 2px;
+  }
+}
+
+:global(html[dir="rtl"]) .heading {
+  font-family: var(--font-arabic), sans-serif;
+  letter-spacing: $tracking-normal;
+}
+
+.viewport {
+  overflow: hidden;
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 1.25rem 1rem;
+}
+
+.track {
+  display: flex;
+  gap: 1rem;
+}
+
+.slide {
+  flex: 0 0 100%;
+  min-width: 0;
+
+  @media (min-width: 640px) {
+    flex: 0 0 calc(50% - 0.5rem);
+  }
+
+  @media (min-width: 1024px) {
+    flex: 0 0 calc(33.333% - 0.67rem);
+  }
+}
+
+.card {
+  margin: 0;
+  height: 100%;
+  padding: 1.65rem 1.5rem 1.5rem;
+  background: linear-gradient(160deg, rgba(255, 252, 246, 0.98) 0%, rgba(248, 244, 237, 0.92) 100%);
+  border: 1px solid rgba(176, 125, 75, 0.14);
+  border-radius: $radius-lg;
+  box-shadow: 0 18px 44px rgba(8, 7, 6, 0.07);
+  position: relative;
+
+  &::before {
+    content: "“";
+    position: absolute;
+    top: 0.65rem;
+    inset-inline-start: 1rem;
+    font-family: var(--font-display), Georgia, serif;
+    font-size: 3rem;
+    line-height: 1;
+    color: rgba(176, 125, 75, 0.2);
+    pointer-events: none;
+  }
+}
+
+.quote {
+  font-size: $text-md;
+  font-style: italic;
+  line-height: $leading-relaxed;
+  color: $color-ink-muted;
+  margin: 0 0 1.1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.author {
+  font-size: $text-sm;
+  font-weight: 600;
+  font-style: normal;
+  color: $color-ink;
+  letter-spacing: $tracking-wide;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 36px;
+    height: 1px;
+    background: linear-gradient(90deg, $color-accent-soft, transparent);
+    margin-bottom: 0.65rem;
+  }
+}

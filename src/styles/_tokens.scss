@@ -1,0 +1,73 @@
+// Crossway New — editorial luxury (warm stone, ink, burnished metal)
+
+// Typography — Poppins app-wide; Arabic uses Noto Sans Arabic (see globals)
+$font-sans: var(--font-poppins), system-ui, sans-serif;
+$font-display: var(--font-poppins), system-ui, sans-serif;
+$font-arabic: var(--font-arabic), var(--font-poppins), sans-serif;
+
+// Type scale (rem)
+$text-xs: 0.75rem; // 12px — captions, micro labels
+$text-sm: 0.8125rem; // 13px — small UI
+$text-base: 1rem; // 16px — body
+$text-md: 1.0625rem; // 17px — lead / comfortable body
+$text-lg: 1.125rem; // 18px — subheads
+$text-xl: 1.25rem; // 20px — card titles
+$text-2xl: 1.5rem; // 24px — section subtitles
+$text-3xl: 1.875rem; // 30px — h3 / large display
+$text-4xl: 2.25rem; // 36px — h2 mobile floor
+$text-hero: clamp(2.125rem, 5.2vw, 3.5rem); // h1 hero
+
+// Line-height (unique rhythm: tight for titles, relaxed for reading)
+$leading-none: 1;
+$leading-tight: 1.2;
+$leading-snug: 1.35;
+$leading-normal: 1.5;
+$leading-relaxed: 1.65; // body default
+$leading-loose: 1.75; // long-form / legal
+
+// Letter-spacing
+$tracking-tighter: -0.03em;
+$tracking-tight: -0.02em;
+$tracking-snug: -0.01em;
+$tracking-normal: 0;
+$tracking-wide: 0.015em; // body (Poppins reads well with slight space)
+$tracking-wider: 0.06em; // labels, nav
+$tracking-widest: 0.12em; // eyebrow / uppercase UI
+
+$color-canvas: #e6e2d8;
+$color-canvas-deep: #0f0e0c;
+$color-ink: #141210;
+$color-ink-muted: rgba(20, 18, 16, 0.62);
+$color-fog: rgba(255, 252, 246, 0.06);
+$color-line: rgba(20, 18, 16, 0.12);
+
+$color-accent: #b07d4b;
+$color-accent-soft: #c9a27a;
+$color-glow: #e8d4bc;
+
+$color-white: #fffef9;
+$color-glass: rgba(15, 14, 12, 0.58);
+$color-panel: rgba(8, 7, 6, 0.88);
+
+$space-section: clamp(4rem, 12vw, 8rem);
+$space-tight: clamp(2rem, 5vw, 3.5rem);
+$container-max: min(1240px, 92vw);
+$header-h: 76px;
+$ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+$radius-sm: 2px;
+$radius-md: 14px;
+$radius-lg: 22px;
+
+$shadow-soft: 0 28px 80px rgba(8, 7, 6, 0.18);
+$shadow-lift: 0 20px 50px rgba(8, 7, 6, 0.12);
+
+// Legacy names used by inner pages (Brochure, blog, legal, etc.)
+$color-text: $color-ink;
+$color-text-muted: $color-ink-muted;
+$color-page-bg: $color-canvas;
+$color-gold: $color-accent;
+$color-gold-hover: $color-accent-soft;
+$color-navy: $color-canvas-deep;
+$color-navy-deep: $color-canvas-deep;
+$shadow-card: $shadow-lift;

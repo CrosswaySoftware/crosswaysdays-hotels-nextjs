@@ -1,0 +1,324 @@
+@use "@/styles/tokens" as *;
+
+.card {
+  background: linear-gradient(165deg, rgba(255, 252, 246, 0.97) 0%, rgba(248, 244, 237, 0.9) 100%);
+  border: 1px solid rgba(176, 125, 75, 0.15);
+  border-radius: $radius-lg;
+  box-shadow: 0 24px 56px rgba(8, 7, 6, 0.08), 0 1px 0 rgba(255, 252, 246, 0.85) inset;
+  overflow: hidden;
+  margin-bottom: 2.25rem;
+  transition: box-shadow 0.45s $ease-out-expo, transform 0.45s $ease-out-expo;
+
+  &:hover {
+    box-shadow: 0 32px 72px rgba(8, 7, 6, 0.11), 0 1px 0 rgba(255, 252, 246, 0.9) inset;
+  }
+}
+
+.grid {
+  display: grid;
+  gap: 0;
+
+  @media (min-width: 900px) {
+    grid-template-columns: minmax(220px, 340px) 1fr minmax(160px, 200px);
+    align-items: stretch;
+  }
+}
+
+.visual {
+  position: relative;
+  min-height: 240px;
+  background: $color-canvas-deep;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 0 0 0 1px rgba(255, 252, 246, 0.06);
+    pointer-events: none;
+  }
+}
+
+.cardImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.75s $ease-out-expo;
+}
+
+.card:hover .cardImg {
+  transform: scale(1.03);
+}
+
+.body {
+  padding: 1.5rem 1.5rem 1.25rem;
+
+  @media (min-width: 900px) {
+    padding: 2rem 1.75rem;
+  }
+}
+
+.name {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+  font-size: clamp($text-xl, 2.4vw, 1.45rem);
+  font-weight: 600;
+  letter-spacing: $tracking-snug;
+  margin: 0 0 0.75rem;
+  color: $color-ink;
+}
+
+:global(html[dir="rtl"]) .name {
+  font-family: var(--font-arabic), sans-serif;
+  letter-spacing: $tracking-normal;
+}
+
+.desc {
+  font-size: $text-md;
+  line-height: $leading-relaxed;
+  color: $color-ink-muted;
+  margin: 0 0 1rem;
+}
+
+.specs {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  font-size: $text-sm;
+  color: $color-ink;
+}
+
+.specs li {
+  position: relative;
+  padding-inline-start: 1rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0;
+    top: 0.45em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: $color-accent;
+  }
+}
+
+.detailsBtn {
+  font: inherit;
+  font-size: $text-sm;
+  font-weight: 600;
+  color: $color-accent;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  &:hover {
+    color: $color-accent-soft;
+  }
+}
+
+.bookCol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid rgba(20, 18, 16, 0.08);
+
+  @media (min-width: 900px) {
+    border-top: none;
+    border-inline-start: 1px solid rgba(20, 18, 16, 0.08);
+  }
+}
+
+.bookForm {
+  width: 100%;
+  max-width: 220px;
+}
+
+.bookBtn {
+  width: 100%;
+  font-size: $text-xs;
+  font-weight: 600;
+  letter-spacing: $tracking-widest;
+  text-transform: uppercase;
+  color: $color-canvas-deep;
+  background: linear-gradient(135deg, rgba(255, 252, 246, 0.4), transparent);
+  border: 2px solid $color-accent;
+  border-radius: 999px;
+  padding: 0.85rem 1rem;
+  cursor: pointer;
+  transition: background 0.3s $ease-out-expo, color 0.3s, box-shadow 0.3s, transform 0.3s $ease-out-expo;
+
+  &:hover {
+    background: linear-gradient(120deg, $color-accent-soft, $color-accent);
+    color: $color-white;
+    box-shadow: 0 12px 32px rgba(8, 7, 6, 0.15);
+    transform: translateY(-2px);
+  }
+}
+
+/* Modal */
+.modalRoot {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modalBackdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 7, 6, 0.72);
+  border: none;
+  cursor: pointer;
+}
+
+.modalDialog {
+  position: relative;
+  z-index: 1;
+  width: min(1100px, 100%);
+  max-height: min(90vh, 900px);
+  overflow: auto;
+  background: $color-white;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-soft;
+}
+
+.modalClose {
+  position: absolute;
+  top: 0.75rem;
+  inset-inline-end: 0.75rem;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: $color-canvas-deep;
+  color: $color-white;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+
+  &:hover {
+    background: $color-accent;
+  }
+}
+
+.modalGrid {
+  display: grid;
+  gap: 0;
+
+  @media (min-width: 900px) {
+    grid-template-columns: minmax(200px, 280px) 1fr;
+    min-height: 400px;
+  }
+}
+
+.modalAside {
+  padding: 2rem 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(20, 18, 16, 0.08);
+
+  @media (min-width: 900px) {
+    border-bottom: none;
+    border-inline-end: 1px solid rgba(20, 18, 16, 0.08);
+    overflow: auto;
+    max-height: min(90vh, 900px);
+  }
+}
+
+.modalTitle {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+  font-size: $text-lg;
+  font-weight: 600;
+  margin: 0 0 1rem;
+}
+
+:global(html[dir="rtl"]) .modalTitle {
+  font-family: var(--font-arabic), sans-serif;
+}
+
+.amenityHeading {
+  font-size: $text-sm;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: $tracking-wider;
+  color: $color-ink-muted;
+  margin: 0 0 0.75rem;
+}
+
+.amenityList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: $text-sm;
+  line-height: $leading-relaxed;
+
+  li {
+    padding: 0.35rem 0;
+    border-bottom: 1px solid rgba(20, 18, 16, 0.06);
+  }
+}
+
+.modalCarousel {
+  position: relative;
+  min-height: 280px;
+}
+
+.embla {
+  overflow: hidden;
+}
+
+.emblaContainer {
+  display: flex;
+}
+
+.emblaSlide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.emblaImgWrap {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  min-height: 260px;
+}
+
+.emblaImg {
+  object-fit: cover;
+}
+
+.emblaArrows {
+  position: absolute;
+  inset-block: 0;
+  inset-inline: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.5rem;
+  pointer-events: none;
+}
+
+.emblaArrow {
+  pointer-events: auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 252, 246, 0.35);
+  background: rgba(8, 7, 6, 0.45);
+  color: $color-white;
+  font-size: 1.35rem;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(8, 7, 6, 0.65);
+  }
+}

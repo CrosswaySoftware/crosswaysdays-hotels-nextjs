@@ -1,0 +1,54 @@
+@use "@/styles/tokens" as *;
+
+.root {
+  display: flex;
+  align-items: center;
+}
+
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.select {
+  appearance: none;
+  font-family: $font-sans;
+  font-size: $text-xs;
+  font-weight: 500;
+  letter-spacing: $tracking-wide;
+  line-height: 1.35;
+  text-transform: none;
+  color: rgba(255, 252, 246, 0.9);
+  background: rgba(255, 252, 246, 0.04);
+  border: 1px solid rgba(255, 252, 246, 0.18);
+  border-radius: $radius-md;
+  padding: 0.38rem 1.5rem 0.38rem 0.65rem;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath stroke='%23fffef9' stroke-width='1.2' d='m1 1 5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.4rem center;
+  transition: border-color 0.25s $ease-out-expo, background-color 0.25s $ease-out-expo;
+
+  &:hover {
+    border-color: $color-accent-soft;
+  }
+
+  option {
+    color: $color-ink;
+    background: $color-white;
+  }
+}
+
+.selectComfortable {
+  font-size: $text-sm;
+  letter-spacing: $tracking-wide;
+  padding: 0.48rem 1.85rem 0.48rem 0.75rem;
+  border-radius: $radius-md;
+  background-position: right 0.55rem center;
+}
