@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
+import { CROSSWAY_HOME } from "@/lib/crosswayHotelHomeNav";
 import { days } from "@/lib/media";
 import styles from "./DaysHotelFooter.module.scss";
 
@@ -34,7 +35,7 @@ export async function DaysHotelFooter() {
           <div>
             <h2 className={styles.title}>{t("contactTitle")}</h2>
             <p className={styles.muted}>
-              <a href="tel:+916383752850">+91 63837 52850</a>
+              <a href="tel:+919751277770">+91 97512 77770</a>
             </p>
             <p className={styles.muted}>
               <a href="mailto:contact@crosswayhotels.com">contact@crosswayhotels.com</a>
@@ -44,19 +45,19 @@ export async function DaysHotelFooter() {
             <h2 className={styles.title}>{t("linksTitle")}</h2>
             <ul className={styles.links}>
               <li>
-                <a href="#overview">{t("linkOverview")}</a>
+                <a href={`#${CROSSWAY_HOME.story}`}>{t("linkOverview")}</a>
               </li>
               <li>
-                <a href="#accommodation">{t("linkAccommodation")}</a>
+                <a href={`#${CROSSWAY_HOME.accommodation}`}>{t("linkAccommodation")}</a>
               </li>
               <li>
-                <a href="#restaurant">{t("linkRestaurant")}</a>
+                <a href={`#${CROSSWAY_HOME.experiences}`}>{t("linkRestaurant")}</a>
               </li>
               <li>
-                <a href="#gallery">{t("linkGallery")}</a>
+                <a href={`#${CROSSWAY_HOME.gallery}`}>{t("linkGallery")}</a>
               </li>
               <li>
-                <a href="#contact">{t("linkContact")}</a>
+                <a href={`#${CROSSWAY_HOME.contact}`}>{t("linkContact")}</a>
               </li>
             </ul>
           </div>

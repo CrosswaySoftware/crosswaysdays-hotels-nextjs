@@ -5,97 +5,172 @@
   background: linear-gradient(180deg, rgba(255, 252, 246, 0.98) 0%, #f0ebe3 100%);
   border-bottom: 1px solid rgba(20, 18, 16, 0.08);
   box-shadow: 0 12px 40px rgba(8, 7, 6, 0.06);
+  overflow: visible;
 }
 
-/* Large booking bar — rounded card, overflow visible for dropdowns / calendars */
+/* Prominent — Palomar parity: segmented row, full-bleed CTA column */
 .barRootProminent {
   border-bottom: none;
-  border-radius: $radius-lg;
-  border: 1px solid rgba(255, 252, 246, 0.65);
-  box-shadow:
-    0 28px 80px rgba(8, 7, 6, 0.14),
-    0 1px 0 rgba(255, 252, 246, 0.85) inset;
-  background: linear-gradient(
-    165deg,
-    rgba(255, 254, 249, 0.92) 0%,
-    rgba(245, 241, 233, 0.88) 45%,
-    rgba(237, 232, 223, 0.94) 100%
-  );
-  backdrop-filter: blur(18px) saturate(160%);
-  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border-radius: 4px;
+  border: 1px solid $color-line;
+  box-shadow: 0 30px 80px rgba(8, 7, 6, 0.25);
+  background: $color-white;
   overflow: visible;
 }
 
 .barRootProminent .barInner {
-  padding: clamp(1.45rem, 3.2vw, 1.85rem) clamp(1.35rem, 3.5vw, 1.85rem) clamp(1.55rem, 3.2vw, 1.9rem);
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   overflow: visible;
 }
 
-.barRootProminent .barFields {
-  gap: 1rem;
+/* Segmented row: check-in | check-out | rooms | adults | children | [submit] */
+.barRow {
+  display: grid;
+  width: 100%;
+  min-width: 0;
+  grid-template-columns: 1fr;
+  gap: 0;
+  align-items: stretch;
 
-  @media (min-width: 1200px) {
-    gap: 1.1rem;
-    column-gap: 1.5rem;
-    grid-template-columns:
-      minmax(240px, 2.4fr)
-      minmax(142px, 1.05fr)
-      minmax(142px, 1.05fr)
-      minmax(92px, 0.62fr)
-      minmax(92px, 0.62fr)
-      minmax(92px, 0.62fr)
-      minmax(188px, auto);
-    row-gap: 0;
+  @media (min-width: 980px) {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) minmax(160px, auto);
   }
 }
 
-.barRootProminent .field {
-  gap: 0.5rem;
+.segment {
+  position: relative;
+  min-width: 0;
+  padding: 1.2rem 1.15rem 1.25rem;
+  border-bottom: 1px solid $color-line;
+  border-inline-end: 1px solid $color-line;
+  transition: background 0.2s $ease-out-expo;
+
+  @media (min-width: 980px) {
+    border-bottom: none;
+  }
+
+  @media (max-width: 979px) {
+    border-inline-end: none;
+  }
+
+  &:hover {
+    background: rgba(230, 226, 216, 0.45);
+  }
 }
 
-.barRootProminent .field span {
-  font-size: 0.8125rem;
+.barRootProminent .segment .field {
+  gap: 0.28rem;
+  min-height: 100%;
 }
 
-.barRootProminent .dropdownTrigger {
-  gap: 0.55rem;
-  min-height: 3.25rem;
-  padding-block: 0.85rem;
-  padding-inline: 1.05rem;
-  font-size: $text-md;
+.barRootProminent .segment .field > span:first-child {
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: $color-ink-muted;
 }
 
-.barRootProminent .dropdownTriggerWide {
-  min-height: 3.35rem;
+.barRootProminent .segment .dateTrigger,
+.barRootProminent .segment .dropdownTrigger {
+  min-height: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  font-family: $font-display;
+  font-size: $text-lg;
+  font-weight: 500;
+  letter-spacing: $tracking-snug;
+  line-height: 1.35;
+
+  &:focus {
+    box-shadow: none;
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-accent;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
 }
 
-.barRootProminent .dateTrigger {
-  gap: 1rem;
-  min-height: 3.25rem;
-  padding-block: 0.85rem;
-  padding-inline: 1.05rem;
-  font-size: $text-md;
-  line-height: 1.45;
+.barRootProminent .segment .dropdownValue {
+  font-weight: 500;
+}
+
+.submitSegment {
+  display: flex;
+  align-items: stretch;
+  padding: 0;
+  border-bottom: none;
+
+  @media (min-width: 980px) {
+    border-inline-end: none;
+  }
+
+  @media (max-width: 979px) {
+    grid-column: 1 / -1;
+  }
+}
+
+.barRootProminent .submitSegment.submitWrap {
+  @media (min-width: 520px) and (max-width: 1199px) {
+    grid-column: 1 / -1;
+  }
 }
 
 .barRootProminent .submit {
-  border-radius: 999px;
-  padding: 0.95rem 1.5rem;
-  font-size: $text-base;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  min-height: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 1.2rem 1.35rem;
+  border: none;
+  border-radius: 0;
+  font-size: $text-sm;
+  font-weight: 600;
   letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $color-white;
+  background: $color-ink;
+  transition: background 0.25s $ease-out-expo;
 
-  @media (min-width: 1200px) {
-    padding: 1rem 1.65rem;
-    min-width: 180px;
+  &:hover:not(:disabled) {
+    transform: none;
+    box-shadow: none;
+    background: $color-accent;
   }
+}
+
+.submitArrow {
+  display: inline-block;
+  transition: transform 0.25s $ease-out-expo;
+  font-weight: 400;
+}
+
+.barRootProminent .submit:hover:not(:disabled) .submitArrow {
+  transform: translateX(4px);
 }
 
 .barInner {
   max-width: $container-max;
   margin: 0 auto;
   padding: 1rem 1.25rem 1.1rem;
+  overflow: visible;
 }
 
+/* Compact strip (non-prominent): boxed inputs + Days-specific 6-field grid */
 .barFields {
   display: grid;
   gap: 0.75rem;
@@ -112,12 +187,11 @@
 
   @media (min-width: 1200px) {
     grid-template-columns:
-      minmax(200px, 2.4fr)
-      minmax(112px, 1fr)
-      minmax(112px, 1fr)
-      minmax(76px, 0.55fr)
-      minmax(76px, 0.55fr)
-      minmax(76px, 0.55fr)
+      minmax(140px, 1fr)
+      minmax(140px, 1fr)
+      minmax(88px, 0.75fr)
+      minmax(88px, 0.75fr)
+      minmax(88px, 0.75fr)
       minmax(148px, auto);
     column-gap: 1rem;
     row-gap: 0;
@@ -155,7 +229,6 @@
   position: relative;
 }
 
-/* Custom dropdown */
 .dropdownTrigger {
   display: flex;
   align-items: center;
@@ -226,7 +299,7 @@
   top: calc(100% + 6px);
   left: 0;
   right: 0;
-  z-index: 120;
+  z-index: 200;
   margin: 0;
   padding: 0.35rem 0;
   list-style: none;
@@ -297,7 +370,6 @@
   color: $color-ink;
   transition: border-color 0.2s $ease-out-expo, box-shadow 0.2s $ease-out-expo;
 
-  /* Date text grows; calendar icon stays at end with flex gap between */
   > span:first-of-type {
     flex: 1;
     min-width: 0;

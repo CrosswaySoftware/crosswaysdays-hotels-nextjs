@@ -1,0 +1,32 @@
+@use "../../styles/hotel-v2" as *;
+
+.root {
+  @include hotel-v2-vars;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 12px;
+  font-family: var(--font-poppins), system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ds-muted);
+}
+
+.num {
+  display: inline-block;
+  padding: 4px 8px;
+  border: 1px solid var(--ds-line);
+  border-radius: 999px;
+  color: var(--ds-ink);
+  font-weight: 500;
+}
+
+.rootDark {
+  color: rgba(244, 236, 216, 0.72);
+}
+
+.rootDark .num {
+  color: var(--ds-paper);
+  border-color: rgba(244, 236, 216, 0.22);
+}

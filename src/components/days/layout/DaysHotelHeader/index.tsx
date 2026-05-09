@@ -4,15 +4,17 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { LocaleSwitcher } from "@/components/layout/LocaleSwitcher/LocaleSwitcher";
+import { CROSSWAY_HOME } from "@/lib/crosswayHotelHomeNav";
 import { days } from "@/lib/media";
+import { RESAVENUE_REG_CODE } from "@/lib/resavenueBooking";
 import styles from "./DaysHotelHeader.module.scss";
 
 const NAV: { href: string; key: "overview" | "accommodation" | "restaurant" | "gallery" | "contact" }[] = [
-  { href: "#overview", key: "overview" },
-  { href: "#accommodation", key: "accommodation" },
-  { href: "#restaurant", key: "restaurant" },
-  { href: "#gallery", key: "gallery" },
-  { href: "#contact", key: "contact" },
+  { href: `#${CROSSWAY_HOME.story}`, key: "overview" },
+  { href: `#${CROSSWAY_HOME.accommodation}`, key: "accommodation" },
+  { href: `#${CROSSWAY_HOME.experiences}`, key: "restaurant" },
+  { href: `#${CROSSWAY_HOME.gallery}`, key: "gallery" },
+  { href: `#${CROSSWAY_HOME.contact}`, key: "contact" },
 ];
 
 export function DaysHotelHeader() {
@@ -23,8 +25,8 @@ export function DaysHotelHeader() {
     <header className={styles.root}>
       <div className={styles.ribbon}>
         <div className={styles.ribbonInner}>
-          <a className={styles.ribbonLink} href="tel:+916383752850">
-            +91 63837 52850
+          <a className={styles.ribbonLink} href="tel:+919751277770">
+            +91 97512 77770
           </a>
           <span className={styles.dot} aria-hidden />
           <a className={styles.ribbonLink} href="mailto:contact@crosswayhotels.com">
@@ -67,7 +69,7 @@ export function DaysHotelHeader() {
               className={styles.bookForm}
             >
               <input type="hidden" name="curr" value="INR" />
-              <input type="hidden" name="regCode" value="ZGVR1115" />
+              <input type="hidden" name="regCode" value={RESAVENUE_REG_CODE} />
               <button type="submit" className={styles.bookBtn}>
                 {t("bookDirect")}
               </button>

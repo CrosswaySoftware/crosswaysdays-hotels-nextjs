@@ -1,48 +1,70 @@
 "use client";
 
-import Autoplay from "embla-carousel-autoplay";
-import useEmblaCarousel from "embla-carousel-react";
-import { useLocale, useTranslations } from "next-intl";
-import { useMemo } from "react";
+import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
 import { useReducedMotion } from "framer-motion";
+import { Eyebrow } from "@/design-system/components/Eyebrow";
 import styles from "./DaysTestimonials.module.scss";
+
+type Item = { name: string; quote: string; from?: string };
 
 export function DaysTestimonials() {
   const t = useTranslations("DaysHome.testimonials");
-  const items = t.raw("items") as { name: string; quote: string }[];
-  const locale = useLocale();
-  const dir = locale === "ar" ? "rtl" : "ltr";
+  const items = t.raw("items") as Item[];
   const reduceMotion = useReducedMotion();
+  const [i, setI] = useState(0);
 
-  const plugins = useMemo(() => {
-    if (reduceMotion) return [];
-    return [
-      Autoplay({
-        delay: 5200,
-        playOnInit: true,
-        stopOnInteraction: false,
-        stopOnMouseEnter: true,
-      }),
-    ];
-  }, [reduceMotion]);
+  useEffect(() => {
+    if (reduceMotion || items.length < 2) return;
+    const id = window.setInterval(() => setI((x) => (x + 1) % items.length), 7000);
+    return () => window.clearInterval(id);
+  }, [items.length, reduceMotion]);
 
-  const [emblaRef] = useEmblaCarousel({ loop: true, align: "start", direction: dir, slidesToScroll: 1 }, plugins);
+  const cur = items[i] ?? items[0];
+  const fromLabel = cur?.from?.trim() ? cur.from : t("guestLabel");
 
   return (
-    <section className={styles.section} aria-labelledby="days-testimonials-heading">
-      <h2 id="days-testimonials-heading" className={styles.heading}>
-        {t("title")}
-      </h2>
-      <div className={styles.viewport} ref={emblaRef}>
-        <div className={styles.track}>
-          {items.map((item, i) => (
-            <div className={styles.slide} key={`${item.name}-${i}`}>
-              <blockquote className={styles.card}>
-                <p className={styles.quote}>{item.quote}</p>
-                <footer className={styles.author}>{item.name}</footer>
-              </blockquote>
+    <section className={styles.root} aria-labelledby="days-testimonials-eyebrow">
+      <div className={styles.grid}>
+        <div className={styles.side}>
+          <div id="days-testimonials-eyebrow">
+            <Eyebrow>{t("title")}</Eyebrow>
+          </div>
+          <div className={styles.stars}>
+            <div className={styles.qsRow}>
+              <span>{t("rating")}</span>
+              <span className={styles.qsStars} aria-hidden>
+                ★★★★★
+              </span>
             </div>
-          ))}
+            <span className={styles.qsMeta}>{t("ratingMeta")}</span>
+          </div>
+          <div className={styles.nav} role="tablist" aria-label={t("navLabel")}>
+            {items.map((_, n) => (
+              <button
+                key={n}
+                type="button"
+                role="tab"
+                aria-selected={n === i}
+                className={`${styles.qn} ${n === i ? styles.qnOn : ""}`}
+                onClick={() => setI(n)}
+              >
+                {String(n + 1).padStart(2, "0")}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div className={styles.main}>
+          <div className={styles.mark} aria-hidden>
+            “
+          </div>
+          <blockquote key={i} className={styles.text}>
+            {cur?.quote}
+          </blockquote>
+          <div className={styles.attr}>
+            <span className={styles.name}>{cur?.name}</span>
+            <span className={styles.from}>{fromLabel}</span>
+          </div>
         </div>
       </div>
     </section>

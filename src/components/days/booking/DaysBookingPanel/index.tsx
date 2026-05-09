@@ -6,11 +6,9 @@ import { arSA, enUS, fr } from "date-fns/locale";
 import { useEffect, useId, useRef, useState } from "react";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/style.css";
+import { RESAVENUE_REG_CODE } from "@/lib/resavenueBooking";
 import calStyles from "./DaysBookingDatePicker.module.scss";
 import styles from "./DaysBookingPanel.module.scss";
-
-/** ResAvenue property code — Crossway Days Hotel, OMR Chennai */
-const REG_CODE = "ZGVR1115";
 
 export type DaysBookingLabels = {
   title: string;
@@ -167,6 +165,7 @@ function ThemedDatePicker({
             disabled={{ before: minDate }}
             locale={dateLocale}
             dir={dir}
+            captionLayout="label"
             className={calStyles.themedPicker}
             defaultMonth={value ?? minDate}
           />
@@ -215,22 +214,19 @@ export function DaysBookingPanel({ labels, prominent = false }: { labels: DaysBo
     ...[1, 2, 3, 4, 5].map((n) => ({ value: String(n), label: String(n) })),
   ];
 
-  return (
-    <form
-      className={`${styles.barRoot} ${prominent ? styles.barRootProminent : ""}`}
-      action="https://bookings.resavenue.com/resBooking4/searchRooms"
-      method="get"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={labels.title}
-    >
+  const hiddenFields = (
+    <>
       <input type="hidden" name="curr" value="INR" />
-      <input type="hidden" name="regCode" value={REG_CODE} />
+      <input type="hidden" name="regCode" value={RESAVENUE_REG_CODE} />
       <input type="hidden" name="arr_date" value={checkIn ? format(checkIn, "dd-MM-yyyy") : ""} />
       <input type="hidden" name="dep_date" value={checkOut ? format(checkOut, "dd-MM-yyyy") : ""} />
+    </>
+  );
 
-      <div className={styles.barInner}>
-        <div className={styles.barFields}>
+  const prominentBody = (
+    <div className={styles.barInner}>
+      <div className={styles.barRow}>
+        <div className={styles.segment}>
           <ThemedDatePicker
             label={labels.checkIn}
             value={checkIn}
@@ -240,6 +236,8 @@ export function DaysBookingPanel({ labels, prominent = false }: { labels: DaysBo
             dateLocale={dateLocale}
             dir={dir}
           />
+        </div>
+        <div className={styles.segment}>
           <ThemedDatePicker
             label={labels.checkOut}
             value={checkOut}
@@ -249,15 +247,14 @@ export function DaysBookingPanel({ labels, prominent = false }: { labels: DaysBo
             dateLocale={dateLocale}
             dir={dir}
           />
-
+        </div>
+        <div className={styles.segment}>
           <CustomSelect name="roomNo" label={labels.rooms} options={roomOptions} value={rooms} onChange={setRooms} />
-          <CustomSelect
-            name="adult_1"
-            label={labels.adults}
-            options={adultOptions}
-            value={adults}
-            onChange={setAdults}
-          />
+        </div>
+        <div className={styles.segment}>
+          <CustomSelect name="adult_1" label={labels.adults} options={adultOptions} value={adults} onChange={setAdults} />
+        </div>
+        <div className={styles.segment}>
           <CustomSelect
             name="child_1"
             label={labels.children}
@@ -265,14 +262,71 @@ export function DaysBookingPanel({ labels, prominent = false }: { labels: DaysBo
             value={children}
             onChange={setChildren}
           />
-
-          <div className={styles.submitWrap}>
-            <button type="submit" className={styles.submit}>
-              {labels.submit}
-            </button>
-          </div>
+        </div>
+        <div className={`${styles.submitWrap} ${styles.submitSegment}`}>
+          <button type="submit" className={styles.submit}>
+            <span>{labels.submit}</span>
+            <span className={styles.submitArrow} aria-hidden>
+              →
+            </span>
+          </button>
         </div>
       </div>
+    </div>
+  );
+
+  const compactBody = (
+    <div className={styles.barInner}>
+      <div className={styles.barFields}>
+        <ThemedDatePicker
+          label={labels.checkIn}
+          value={checkIn}
+          onChange={setCheckIn}
+          minDate={today}
+          placeholder={labels.placeholderDate}
+          dateLocale={dateLocale}
+          dir={dir}
+        />
+        <ThemedDatePicker
+          label={labels.checkOut}
+          value={checkOut}
+          onChange={setCheckOut}
+          minDate={checkOutMin}
+          placeholder={labels.placeholderDate}
+          dateLocale={dateLocale}
+          dir={dir}
+        />
+
+        <CustomSelect name="roomNo" label={labels.rooms} options={roomOptions} value={rooms} onChange={setRooms} />
+        <CustomSelect name="adult_1" label={labels.adults} options={adultOptions} value={adults} onChange={setAdults} />
+        <CustomSelect
+          name="child_1"
+          label={labels.children}
+          options={childOptions}
+          value={children}
+          onChange={setChildren}
+        />
+
+        <div className={styles.submitWrap}>
+          <button type="submit" className={styles.submit}>
+            {labels.submit}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+
+  return (
+    <form
+      className={`${styles.barRoot} ${prominent ? styles.barRootProminent : ""}`}
+      action="https://bookings.resavenue.com/resBooking4/searchRooms"
+      method="get"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={labels.title}
+    >
+      {hiddenFields}
+      {prominent ? prominentBody : compactBody}
     </form>
   );
 }

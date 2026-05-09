@@ -55,7 +55,7 @@
 
 .title {
   @include token-display;
-  font-size: clamp(1.65rem, 3.5vw, 2.35rem);
+  font-size: clamp(1.45rem, 3vw, 2.05rem);
   font-weight: 600;
   margin: 0;
   color: $color-ink;
@@ -77,11 +77,14 @@
   margin: 0.35rem 0 0;
 }
 
+/* ——— Stage ——— */
 .stage {
   position: relative;
   border-radius: $radius-lg;
   overflow: hidden;
-  background: linear-gradient(165deg, rgba(15, 14, 12, 0.94) 0%, rgba(8, 7, 6, 0.92) 100%);
+  background:
+    radial-gradient(ellipse 90% 70% at 40% 90%, rgba(176, 125, 75, 0.08), transparent 50%),
+    linear-gradient(165deg, rgba(46, 41, 31, 0.96) 0%, rgba(30, 26, 22, 0.94) 100%);
   border: 1px solid rgba(176, 125, 75, 0.2);
   box-shadow:
     0 32px 80px rgba(8, 7, 6, 0.22),
@@ -103,17 +106,59 @@
 .mainSlide {
   flex: 0 0 100%;
   min-width: 0;
+  display: flex;
+  justify-content: center;
 }
 
 .mainImageWrap {
   position: relative;
+  /* When max-height caps the frame, width must shrink with 16:9 or the slide stays full-width and empty space appears beside the image */
+  width: min(100%, calc(min(72vh, 640px) * 16 / 9));
+  max-width: 100%;
+  margin-inline: auto;
   aspect-ratio: 16 / 9;
   max-height: min(72vh, 640px);
-  background: #0f0e0c;
+  /* Warm neutral if any edge peeks through — no pure black */
+  background: linear-gradient(135deg, #2e291f 0%, #252019 100%);
+  isolation: isolate;
+
+  /* Match hero veil: light black / charcoal wash for caption + controls readability */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    border-radius: inherit;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(10, 9, 8, 0.45) 0%,
+        rgba(12, 10, 8, 0.14) 38%,
+        rgba(12, 10, 8, 0.12) 55%,
+        rgba(8, 7, 6, 0.72) 100%
+      ),
+      radial-gradient(ellipse 125% 90% at 50% 108%, rgba(0, 0, 0, 0.36), transparent 52%),
+      radial-gradient(ellipse at 28% 72%, rgba(176, 125, 75, 0.12), transparent 58%);
+  }
 }
 
+/* Next/Image `fill` sits in a positioned span; span + img must fill or globals `img{height:auto}` leaves letterboxing */
+.mainImageWrap :global(> span) {
+  position: absolute !important;
+  inset: 0;
+  z-index: 0;
+  display: block;
+}
+
+/* next/image `fill` must win over global `img { height: auto }` or black bars show */
 .mainImg {
   object-fit: cover;
+  object-position: center;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  min-height: 100%;
 }
 
 .caption {
@@ -121,9 +166,10 @@
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 2;
   padding: 1rem 1.25rem 1.1rem;
-  background: linear-gradient(0deg, rgba(8, 7, 6, 0.88) 0%, transparent 100%);
-  color: rgba(255, 252, 246, 0.88);
+  background: linear-gradient(0deg, rgba(8, 7, 6, 0.78) 0%, rgba(8, 7, 6, 0.12) 72%, transparent 100%);
+  color: rgba(255, 252, 246, 0.92);
   font-size: $text-sm;
   line-height: $leading-snug;
   letter-spacing: $tracking-wide;
@@ -194,6 +240,7 @@
   transform: scale(1.15);
 }
 
+/* ——— Thumbnails ——— */
 .thumbsWrap {
   margin-top: 0.85rem;
   padding: 0.65rem 0.35rem 0.15rem;
@@ -217,6 +264,7 @@
   height: 58px;
   border-radius: $radius-sm;
   overflow: hidden;
+  background: linear-gradient(135deg, #2e291f 0%, #252019 100%);
   border: 2px solid transparent;
   padding: 0;
   cursor: pointer;
@@ -237,6 +285,16 @@
   box-shadow: 0 0 0 1px rgba(176, 125, 75, 0.35);
 }
 
+.thumbBtn :global(> span) {
+  position: absolute !important;
+  inset: 0;
+  display: block;
+}
+
 .thumbImg {
   object-fit: cover;
+  object-position: center;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
 }

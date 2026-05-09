@@ -1,8 +1,10 @@
-/** Paths under `public/` for Crossway Days Hotel microsite. */
+/** Static assets under `public/` for the Crossway Days microsite. */
 
 export const days = {
-  /** Same mark as crossway-new main site */
-  logoHeader: "/images/layout/logo.png",
-  logoFooter: "/images/layout/logo.png",
-  hero: "/images/hero-bg.jpg",
+  /** Light mark on hero — Palomar parity (`public/images/layout/logo.webp`). */
+  logoHeader: "/images/layout/logo.webp",
+  /** Solid app bar (`public/logoblue.svg`). */
+  logoHeaderBlue: "/logoblue.svg",
+  logoFooter: "/images/crossway_logo_footer.svg",
+  hero: "/images/dayshotel.jpg",
 } as const;

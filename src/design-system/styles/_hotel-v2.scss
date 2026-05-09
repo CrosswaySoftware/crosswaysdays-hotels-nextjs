@@ -1,0 +1,19 @@
+// Crossway hotel microsite v2 — semantic tokens (shared with Palomar property sites)
+
+@mixin hotel-v2-vars {
+  --ds-canvas: #efe9dd;
+  --ds-paper: #faf6ee;
+  --ds-ink: #1a1714;
+  --ds-image-shim: #2e291f;
+  --ds-stage-warm: #252019;
+  --ds-clay: #b07d4b;
+  --ds-muted: rgba(26, 23, 20, 0.62);
+  --ds-line: rgba(26, 23, 20, 0.12);
+  --ds-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ds-container: min(1480px, 92vw);
+  --ds-hdr-h: 54px;
+  --ds-density: 1;
+  --ds-font-display: var(--font-poppins), system-ui, sans-serif;
+  --ds-font-sans: var(--font-poppins), system-ui, sans-serif;
+  --ds-font-mono: var(--font-poppins), ui-monospace, monospace;
+}

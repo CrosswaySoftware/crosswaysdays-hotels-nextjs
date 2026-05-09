@@ -4,7 +4,8 @@
   position: absolute;
   top: calc(100% + 6px);
   left: 0;
-  z-index: 120;
+  /* Above page sections; must clear header */
+  z-index: 200;
   padding: 0.65rem;
   background: linear-gradient(165deg, #fffef9 0%, #f2ede6 100%);
   border: 1px solid rgba(20, 18, 16, 0.12);
@@ -18,10 +19,9 @@
   }
 }
 
-/* Theme variables for react-day-picker (.rdp-root) */
 .themedPicker {
   --rdp-accent-color: #{$color-accent};
-  --rdp-accent-background-color: rgba(232, 212, 188, 0.55);
+  --rdp-accent-background-color: #{$color-accent};
   --rdp-day-height: 38px;
   --rdp-day-width: 38px;
   --rdp-day_button-border-radius: 8px;
@@ -63,7 +63,14 @@
   }
 
   :global(.rdp-selected .rdp-day_button) {
+    background-color: $color-accent;
+    border-color: $color-accent;
     color: $color-white;
+  }
+
+  :global(.rdp-today:not(.rdp-selected) .rdp-day_button) {
+    color: $color-accent;
+    font-weight: 700;
   }
 }
 

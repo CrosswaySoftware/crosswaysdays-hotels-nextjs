@@ -1,0 +1,19 @@
+@use "../../styles/hotel-v2" as *;
+
+.display {
+  @include hotel-v2-vars;
+  font-family: var(--font-poppins), system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  text-wrap: balance;
+  margin: 0;
+  font-size: clamp(1.7rem, 3.55vw, 3.5rem);
+  color: var(--ds-ink);
+
+  :global(em) {
+    font-style: normal;
+    font-weight: 300;
+    color: var(--ds-clay);
+  }
+}

@@ -1,7 +1,119 @@
 @use "@/styles/tokens" as *;
+@use "@/design-system/styles/hotel-v2" as *;
 
 .form {
   max-width: 42rem;
+}
+
+.formCon {
+  @include hotel-v2-vars;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  background: var(--ds-paper);
+  padding: clamp(28px, 4vw, 40px);
+  border-radius: 4px;
+  border: 1px solid var(--ds-line);
+}
+
+.purposeRow {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--ds-line);
+}
+
+.pill {
+  padding: 8px 14px;
+  border: 1px solid var(--ds-line);
+  border-radius: 999px;
+  font-family: var(--ds-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--ds-ink);
+  cursor: pointer;
+  transition:
+    background 0.3s var(--ds-ease),
+    color 0.3s var(--ds-ease),
+    border-color 0.3s var(--ds-ease);
+}
+
+.pill:hover {
+  border-color: var(--ds-ink);
+}
+
+.pillOn {
+  background: var(--ds-ink);
+  color: var(--ds-paper);
+  border-color: var(--ds-ink);
+}
+
+.fieldCon {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  span {
+    font-family: var(--ds-font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ds-muted);
+  }
+
+  input,
+  textarea {
+    border: 0;
+    border-bottom: 1px solid var(--ds-line);
+    background: transparent;
+    padding: 10px 0;
+    font-family: var(--ds-font-display);
+    font-size: clamp(1.1rem, 2vw, 22px);
+    color: var(--ds-ink);
+    outline: none;
+    resize: vertical;
+
+    &::placeholder {
+      color: var(--ds-muted);
+      font-style: italic;
+    }
+
+    &:focus {
+      border-color: var(--ds-clay);
+    }
+  }
+}
+
+.feedbackOkNamed {
+  font-family: var(--ds-font-display);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--ds-clay);
+  margin: 0;
+}
+
+.submitCon {
+  align-self: flex-start;
+  margin-top: 12px;
+  font-family: var(--ds-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 14px 22px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  background: var(--ds-ink);
+  color: var(--ds-paper);
+  transition: opacity 0.25s var(--ds-ease);
+
+  &:disabled {
+    opacity: 0.65;
+    cursor: wait;
+  }
 }
 
 .feedbackOk {

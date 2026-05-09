@@ -18,6 +18,7 @@
 .pageRoot {
   position: relative;
   overflow-x: clip;
+  overflow-y: visible;
   isolation: isolate;
   background:
     radial-gradient(ellipse 120% 65% at 50% -10%, rgba($color-accent, 0.09), transparent 58%),
@@ -339,15 +340,134 @@
   filter: saturate(0.95) contrast(1.02);
 }
 
-.tieUp {
-  padding: 2.5rem 0 3.5rem;
-  background: linear-gradient(180deg, transparent, rgba(15, 14, 12, 0.03));
+/* ——— Palomar-style booking dock + bands ——— */
+.bookingDock {
+  position: relative;
+  z-index: 25;
+  width: 100%;
+  pointer-events: none;
+  box-sizing: border-box;
+  margin-top: 0;
+  padding: clamp(1rem, 3vw, 1.5rem) 0 clamp(1.25rem, 4vw, 2rem);
+  scroll-margin-top: 88px;
+
+  > * {
+    pointer-events: auto;
+  }
 }
 
-.tieUpImg {
+.galleryEmbed {
+  padding: clamp(2rem, 5vw, 3.5rem) 0;
+  scroll-margin-top: 88px;
+}
+
+.contactHead {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 900px;
+  margin-bottom: 48px;
+}
+
+.whyCta {
+  background: #1a1714;
+  color: $color-white;
+  margin: 0;
   width: 100%;
-  height: auto;
-  border-radius: $radius-lg;
-  box-shadow: $shadow-lift;
-  border: 1px solid rgba(20, 18, 16, 0.06);
+}
+
+.whyCtaGrid {
+  width: min(1480px, 92vw);
+  margin: 0 auto;
+  padding: clamp(4rem, 14vw, 8.75rem) clamp(1rem, 4vw, 1.75rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1.5rem, 3.5vw, 2.25rem);
+  text-align: center;
+}
+
+.whyCtaEye {
+  padding-top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.whyCtaTitle {
+  font-family: var(--font-poppins), system-ui, sans-serif;
+  font-size: clamp(1.55rem, 3.5vw, 2.65rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  margin: 0;
+  font-weight: 400;
+  color: $color-white;
+  text-align: center;
+  max-width: min(52rem, 92vw);
+
+  em {
+    font-style: italic;
+    font-weight: 300;
+    color: $color-accent;
+  }
+}
+
+.whyCtaSide {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+  max-width: min(36rem, 100%);
+}
+
+.whyCtaPoints {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: rgba(244, 236, 216, 0.82);
+  font-size: 13px;
+  line-height: 1.45;
+  text-align: start;
+  width: 100%;
+
+  li {
+    padding-inline-start: 18px;
+    position: relative;
+  }
+
+  li::before {
+    content: "—";
+    position: absolute;
+    inset-inline-start: 0;
+    color: $color-accent;
+  }
+}
+
+.whyCtaBook {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  background: $color-accent;
+  color: #fff;
+  border: 1px solid transparent;
+  transition: background 0.25s $ease-out-expo;
+
+  &:hover {
+    background: $color-ink;
+  }
+}
+
+@media (max-width: 1000px) {
+  .whyCtaGrid {
+    gap: 1.5rem;
+  }
 }

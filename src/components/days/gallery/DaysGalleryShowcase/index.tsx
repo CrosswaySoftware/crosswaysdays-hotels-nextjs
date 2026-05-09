@@ -7,10 +7,9 @@ import { useLocale, useTranslations } from "next-intl";
 import { useReducedMotion } from "framer-motion";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { galleryAll } from "@/data/galleryMedia";
+import { imageBlurPlaceholder } from "@/lib/imagePlaceholder";
+import { days } from "@/lib/media";
 import styles from "./DaysGalleryShowcase.module.scss";
-
-/** Brand mark in gallery header (SVG shipped under `public/images/`). */
-const GALLERY_LOGO = "/images/crossway_logo.svg";
 
 const SLIDES = galleryAll;
 
@@ -21,18 +20,21 @@ export function DaysGalleryShowcase({ showHeader = true }: { showHeader?: boolea
   const reduceMotion = useReducedMotion();
   const [selected, setSelected] = useState(0);
 
-  const autoplay = useMemo(() => {
+  const autoplayPlugins = useMemo(() => {
     if (reduceMotion) return [];
     return [
       Autoplay({
         delay: 5200,
+        playOnInit: true,
         stopOnInteraction: false,
         stopOnMouseEnter: true,
+        stopOnFocusIn: false,
+        stopOnLastSnap: false,
       }),
     ];
   }, [reduceMotion]);
 
-  const [mainRef, mainApi] = useEmblaCarousel({ loop: true, align: "center", direction: dir }, autoplay);
+  const [mainRef, mainApi] = useEmblaCarousel({ loop: true, align: "center", direction: dir }, autoplayPlugins);
   const [thumbRef, thumbApi] = useEmblaCarousel({
     containScroll: "keepSnaps",
     dragFree: true,
@@ -56,8 +58,32 @@ export function DaysGalleryShowcase({ showHeader = true }: { showHeader?: boolea
     };
   }, [mainApi, onSelect]);
 
+  useEffect(() => {
+    mainApi?.reInit();
+  }, [mainApi, dir]);
+
   const scrollPrev = useCallback(() => mainApi?.scrollPrev(), [mainApi]);
   const scrollNext = useCallback(() => mainApi?.scrollNext(), [mainApi]);
+
+  useEffect(() => {
+    if (!mainApi) return;
+    const isTypingTarget = (el: EventTarget | null) => {
+      if (!el || !(el instanceof HTMLElement)) return false;
+      const tag = el.tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return true;
+      if (el.isContentEditable) return true;
+      return false;
+    };
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+      if (isTypingTarget(e.target)) return;
+      e.preventDefault();
+      if (e.key === "ArrowRight") mainApi.scrollNext();
+      else mainApi.scrollPrev();
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [mainApi]);
 
   const onThumbClick = useCallback(
     (index: number) => {
@@ -73,14 +99,7 @@ export function DaysGalleryShowcase({ showHeader = true }: { showHeader?: boolea
       {showHeader ? (
         <header className={styles.header}>
           <div className={styles.brandRow}>
-            <Image
-              src={GALLERY_LOGO}
-              alt=""
-              width={72}
-              height={72}
-              className={styles.brandMark}
-              priority={false}
-            />
+            <Image src={days.logoHeader} alt="" width={72} height={72} className={styles.brandMark} priority={false} />
             <div>
               <h2 id="days-gallery-heading" className={styles.title}>
                 {t("sectionTitle")}
@@ -104,11 +123,13 @@ export function DaysGalleryShowcase({ showHeader = true }: { showHeader?: boolea
                 <div className={styles.mainSlide} key={`${item.src}-${index}`}>
                   <div className={styles.mainImageWrap}>
                     <Image
+                      {...imageBlurPlaceholder}
                       src={item.src}
                       alt={item.alt}
                       fill
                       className={styles.mainImg}
                       sizes="(max-width: 900px) 100vw, min(1100px, 92vw)"
+                      quality={85}
                       priority={index === 0}
                     />
                     <p className={styles.caption}>{item.alt}</p>
@@ -156,7 +177,15 @@ export function DaysGalleryShowcase({ showHeader = true }: { showHeader?: boolea
                   aria-label={item.alt}
                   aria-current={selected === index}
                 >
-                  <Image src={item.src} alt="" fill className={styles.thumbImg} sizes="88px" />
+                  <Image
+                    {...imageBlurPlaceholder}
+                    src={item.src}
+                    alt=""
+                    fill
+                    className={styles.thumbImg}
+                    sizes="88px"
+                    quality={75}
+                  />
                 </button>
               ))}
             </div>

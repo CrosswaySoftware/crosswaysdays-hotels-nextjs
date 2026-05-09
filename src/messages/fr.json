@@ -7,6 +7,9 @@
   },
   "DaysNav": {
     "menuToggle": "Menu",
+    "menuTitle": "Menu du site",
+    "menuClose": "Fermer le menu",
+    "home": "Accueil",
     "overview": "Présentation",
     "accommodation": "Hébergement",
     "restaurant": "Restauration",
@@ -37,6 +40,109 @@
     "placeholderDate": "Choisir une date",
     "childNone": "—"
   },
+  "DaysV2": {
+    "ariaLabel": "Crossway Days Hotel · Chennai OMR",
+    "coord": "12.8038° N · 80.2228° E",
+    "place": "Chennai · Inde",
+    "titleSeo": "Days Hotel by Wyndham Chennai OMR",
+    "line1": "Crossway",
+    "line2": "Days Hotel",
+    "line3": "Old Mahabalipuram Road",
+    "line4": "Padur · Chennai",
+    "sub": "Nous redéfinissons une nouvelle dimension de luxe et de détente",
+    "numRooms": "57",
+    "metaRooms": "Chambres",
+    "numVenues": "6",
+    "metaVenues": "Restauration & banquet",
+    "numPlace": "OMR",
+    "metaPlace": "Couloir IT",
+    "ctaBook": "Réserver en direct",
+    "ctaDining": "Restauration",
+    "dotAria": "Diapositive {n} sur {total}",
+    "slides": [
+      { "area": "Arrivée", "caption": "Crossway Days Hotel — façade et entrée" },
+      { "area": "Lobby", "caption": "Lobby et salon — première impression" },
+      { "area": "Svanna rooftop", "caption": "Restaurant en plein air avec vue sur Chennai" },
+      { "area": "Nutcracker", "caption": "Restaurant tout au long de la journée" },
+      { "area": "Ride Bar", "caption": "Soirées au Ride Bar" }
+    ],
+    "story": {
+      "eyebrow": "Présentation",
+      "stamp": "PADUR · CHENNAI OMR",
+      "caption": "Crossway Days Hotel — Old Mahabalipuram Road, Chennai",
+      "linkRooms": "Voir les chambres"
+    },
+    "rooms": {
+      "eyebrow": "Hébergement",
+      "title": "Chambres pensées pour les voyages d’affaires et les week-ends.",
+      "idealFor": "Idéal pour",
+      "enquireAbout": "Demande sur {room} →",
+      "idealDetail": {
+        "standard": "Voyageurs solo, couples, séjours pros courts",
+        "deluxe": "Plus d’espace et vues coucher de soleil",
+        "suite": "Familles, longs séjours, réceptions privées"
+      },
+      "tagline": {
+        "standard": "Chambres lumineuses avec vue verdure & horizon.",
+        "deluxe": "Plus de superficie et confort relevé sur l’OMR.",
+        "suite": "Suite résidentielle avec salon séparé."
+      },
+      "beds": {
+        "standard": "Lit king ou jumeaux",
+        "deluxe": "Lit king ou jumeaux",
+        "suite": "Lit king · salon"
+      }
+    },
+    "dining": {
+      "eyebrow": "Restauration & expériences",
+      "title": "De la restauration au grill rooftop et aux banquets.",
+      "intro": "Nutcracker, Svanna rooftop, Ride Bar, salles Sunrise, Viviana Spa et fitness — le même accueil Crossway.",
+      "linkAll": "Aperçu galerie",
+      "highlights": "Points forts",
+      "explore": "Découvrir",
+      "seatsSuffix": "places",
+      "hoursFallback": {
+        "nutcracker": "Service continu · réservations bienvenues",
+        "svanna": "Soirées · vue panoramique",
+        "rideBar": "Soirées · bar lounge",
+        "banquet": "850–3500 pi² · réceptions & séminaires",
+        "spa": "Soins sur rendez-vous",
+        "gym": "Cardio & musculation · clients de l’hôtel"
+      },
+      "seats": {
+        "nutcracker": "Buffet & carte",
+        "svanna": "Rooftop",
+        "rideBar": "Bar lounge",
+        "banquet": "Capacité banquet",
+        "spa": "Bien-être",
+        "gym": "Fitness"
+      },
+      "kinds": {
+        "nutcracker": "Restaurant multi-spécialités",
+        "svanna": "Grill rooftop · plein air",
+        "rideBar": "Bar · salon",
+        "banquet": "Salles Sunrise · événements",
+        "spa": "Spa · salon",
+        "gym": "Centre fitness"
+      },
+      "sig": {
+        "nutcracker": "Comptoirs vivants · coin japonais · cuisines du monde",
+        "svanna": "Vue côtière · mur LED sports · dîners cocktails",
+        "rideBar": "Spiritueux premium · soirées détendues",
+        "banquet": "Deux salles Sunrise pour petites ou grandes réceptions",
+        "spa": "Massages, gommages, soins visage pour voyageurs",
+        "gym": "Équipement moderne pour entraînements complets"
+      }
+    },
+    "mosaic": {
+      "eyebrow": "Galerie",
+      "title": "Crossway Days Hotel — séjours, restauration, banquets et bien-être sur l’OMR.",
+      "link": "Ouvrir la galerie complète"
+    },
+    "contact": {
+      "eyebrow": "Contact"
+    }
+  },
   "DaysHome": {
     "hero": {
       "eyebrow": "Crossway Days Hotel · OMR Chennai",
@@ -50,6 +156,12 @@
     },
     "rooms": {
       "sectionTitle": "Hébergement",
+      "intro": "Chambres au parcours réfléchi et à l’accueil Crossway — idéales pour Siruseri, séminaires et escapades vers Mahabalipuram.",
+      "v2Features": {
+        "standard": ["King ou jumeaux", "Vues verdure & horizon", "Bureau & Wi‑Fi", "Room service"],
+        "deluxe": ["Plus d’espace", "Baignoire ou douche", "Couchers de soleil campagne", "Salle de bain premium"],
+        "suite": ["Salon & powder room séparés", "Familles", "Vues coucher de soleil", "Dressing XXL"]
+      },
       "standard": {
         "title": "Chambre Standard",
         "description": "Ces chambres répondent aux besoins professionnels en optimisant l’espace, le confort et la qualité — idéales pour les voyageurs seuls ou les couples. La vue sur la verdure, l’horizon marin et le lever du soleil est saisissante.",
@@ -197,6 +309,10 @@
     },
     "testimonials": {
       "title": "Ce que disent nos clients",
+      "rating": "4,7",
+      "ratingMeta": "Moyenne sur les retours clients · Google · TripAdvisor · Booking.com",
+      "guestLabel": "Invité",
+      "navLabel": "Avis clients",
       "items": [
         {
           "name": "Jayashree V",
@@ -224,52 +340,57 @@
         }
       ]
     },
+    "whyChoose": {
+      "eyebrow": "Pourquoi Crossway Days",
+      "titleBefore": "Tout ce qu’il vous faut ",
+      "titleEm": "sur l’OMR Chennai",
+      "titleAfter": " — hébergement, restauration, banquets et spa au même endroit.",
+      "points": [
+        "Padur à proximité de Siruseri et Chettinad Health City",
+        "Nutcracker, Svanna, Ride Bar, Sunrise, Viviana Spa & fitness",
+        "57 chambres standard, deluxe et suites",
+        "Réservation directe ResAvenue avec service Crossway"
+      ],
+      "bookCta": "Réserver en direct"
+    },
     "nearby": {
       "title": "À proximité",
-      "subtitle": "Distances routières indicatives — la réception peut vous conseiller itinéraires et horaires.",
-      "landmarksHeading": "Sites et distances indicatives",
-      "essentials": [
+      "headline": "Distances routières approximatives — <em>notre réception</em> peut suggérer les meilleurs itinéraires et horaires.",
+      "groups": [
         {
-          "label": "Aéroports",
-          "detail": "Aéroport le plus proche — Chennai",
-          "distance": "28 km"
+          "title": "Sites et loisirs",
+          "rows": [
+            { "name": "Musée DakshinaChitra", "dist": "15", "unit": "km", "note": "Patrimoine" },
+            { "name": "Plage de Kovalam", "dist": "6", "unit": "km", "note": "Côte" },
+            { "name": "Mamallapuram", "dist": "25", "unit": "km", "note": "Site UNESCO" },
+            { "name": "VGP Snow Kingdom", "dist": "23", "unit": "km", "note": "Famille" },
+            { "name": "Phoenix Mall", "dist": "27", "unit": "km", "note": "Shopping" }
+          ]
         },
         {
-          "label": "Gare ferroviaire",
-          "detail": "La plus proche — Tambaram, Chennai",
-          "distance": "28 km"
+          "title": "Hôpital",
+          "rows": [{ "name": "Chettinad Health City", "dist": "2", "unit": "km", "note": "Hôpital le plus proche" }]
         },
         {
-          "label": "Hôpital ou clinique",
-          "detail": "Le plus proche — Chettinad Health City",
-          "distance": "2 km"
+          "title": "Train",
+          "rows": [{ "name": "Gare de Tambaram", "dist": "28", "unit": "km", "note": "Gare la plus proche" }]
+        },
+        {
+          "title": "Aéroport",
+          "rows": [{ "name": "Aéroport international de Chennai", "dist": "28", "unit": "km", "note": "Aéroport le plus proche" }]
         }
       ],
-      "landmarks": [
-        {
-          "name": "Musée DakshinaChitra",
-          "distance": "15 km"
-        },
-        {
-          "name": "Plage de Kovalam",
-          "distance": "06 km"
-        },
-        {
-          "name": "Mamallapuram",
-          "distance": "25 km"
-        },
-        {
-          "name": "VGP Snow Kingdom",
-          "distance": "23 km"
-        },
-        {
-          "name": "Phoenix Mall",
-          "distance": "27 km"
-        }
-      ]
+      "mapAddress": "245/1, Old Mahabalipuram Road, Padur, Chennai – 603103",
+      "mapHint": "Carte indicative · ouvrir dans Maps pour l’emplacement exact.",
+      "openMaps": "Ouvrir dans Maps",
+      "mapSlideGoogle": "Google Maps",
+      "mapSlideDiagram": "Schéma",
+      "mapViewsLabel": "Choisir la vue"
     },
     "contact": {
       "title": "Écrivez-nous",
+      "intro": "Indiquez vos dates, votre brief événement ou un message — notre équipe répond rapidement.",
+      "mapTitle": "Plan et itinéraire",
       "name": "Nom",
       "email": "E-mail",
       "message": "Message",
@@ -277,7 +398,31 @@
       "sending": "Envoi…",
       "success": "Merci — votre message a bien été reçu.",
       "error": "Une erreur s’est produite. Réessayez ou écrivez à contact@crosswayhotels.com",
-      "mapTitle": "Plan et itinéraire"
+      "reachEyebrow": "Nous joindre",
+      "visitLabel": "Adresse",
+      "visitText": "245/1, Old Mahabalipuram Road, Padur, Chennai – 603103.",
+      "deskLabel": "Réception",
+      "deskLine1": "+91 97512 77770",
+      "deskLine2": "contact@crosswayhotels.com",
+      "eventsLabel": "Événements & lieux",
+      "eventsLine1": "contact@crosswayhotels.com",
+      "eventsLine2": "+91 97512 77770",
+      "pressLabel": "Presse & partenariats",
+      "pressText": "contact@crosswayhotels.com",
+      "purpose": {
+        "stay": "Séjour",
+        "event": "Événement",
+        "dining": "Restauration",
+        "press": "Presse"
+      },
+      "fieldName": "01 — Votre nom",
+      "fieldEmail": "02 — E-mail",
+      "fieldMessage": "03 — Message",
+      "placeholderName": "Nom complet",
+      "placeholderEmail": "vous@domaine.com",
+      "placeholderMessage": "Parlez-nous de votre séjour ou événement…",
+      "guestFallback": "invité",
+      "successNamed": "Merci, {name}. La réception vous répondra dans la journée."
     }
   },
   "DaysExperience": {
@@ -285,6 +430,8 @@
     "breadcrumbExperiences": "Expériences",
     "readMore": "Découvrir en détail",
     "back": "Retour aux expériences",
+    "heroBack": "Retour à la restauration et aux expériences",
+    "aboutLabel": "À propos",
     "heroEyebrow": "Crossway Days Hotel · OMR Chennai",
     "galleryHeading": "Galerie"
   }
