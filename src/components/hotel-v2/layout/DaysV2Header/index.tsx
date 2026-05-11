@@ -1,14 +1,23 @@
 "use client";
 
 import Image from "next/image";
-import { useTranslations } from "next-intl";
-import { useEffect, useState, useSyncExternalStore } from "react";
+import { useLocale, useTranslations } from "next-intl";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { Link, usePathname } from "@/i18n/navigation";
 import { LocaleSwitcher } from "@/components/layout/LocaleSwitcher/LocaleSwitcher";
 import { CROSSWAY_HOME } from "@/lib/crosswayHotelHomeNav";
 import { days } from "@/lib/media";
+import {
+  CROSSWAY_CORPORATE_URL,
+  SISTER_SITE_LABEL_KEYS,
+  sisterMicrositeUrl,
+  sisterSitesFor,
+  type SisterSiteId,
+} from "@/lib/crosswaySisterHotels";
 import { RESAVENUE_BOOK_DIRECT_URL } from "@/lib/resavenueBooking";
 import styles from "./DaysV2Header.module.scss";
+
+const SITE_ID: SisterSiteId = "days";
 
 function readHash() {
   if (typeof window === "undefined") return "";
@@ -25,7 +34,11 @@ type NavKey = "home" | "accommodation" | "restaurant" | "gallery" | "contact";
 
 export function DaysV2Header() {
   const t = useTranslations("DaysNav");
+  const locale = useLocale();
+  const sisterIds = sisterSitesFor(SITE_ID);
+  const hotelsDropdownRef = useRef<HTMLDivElement>(null);
   const [open, setOpen] = useState(false);
+  const [hotelsDropdownOpen, setHotelsDropdownOpen] = useState(false);
   const [solid, setSolid] = useState(false);
   const pathname = usePathname() ?? "/";
   const hash = useSyncExternalStore(subscribeHash, readHash, () => "");
@@ -45,6 +58,29 @@ export function DaysV2Header() {
       document.body.style.overflow = prev;
     };
   }, [open]);
+
+  useEffect(() => {
+    setHotelsDropdownOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!hotelsDropdownOpen) return;
+    const onDoc = (e: MouseEvent) => {
+      const root = hotelsDropdownRef.current;
+      if (root && !root.contains(e.target as Node)) setHotelsDropdownOpen(false);
+    };
+    document.addEventListener("mousedown", onDoc);
+    return () => document.removeEventListener("mousedown", onDoc);
+  }, [hotelsDropdownOpen]);
+
+  useEffect(() => {
+    if (!hotelsDropdownOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setHotelsDropdownOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [hotelsDropdownOpen]);
 
   const isHome = pathname === "/" || pathname === "";
   const h = hash;
@@ -78,8 +114,10 @@ export function DaysV2Header() {
   return (
     <header className={`${styles.root} ${barSolid ? styles.solid : ""} ${open ? styles.menuOpen : ""}`}>
       <div className={styles.inner}>
-        <Link
-          href="/"
+        <a
+          href={CROSSWAY_CORPORATE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className={`${styles.logo} ${headerSolid ? styles.logoSolid : ""}`}
           onClick={() => setOpen(false)}
         >
@@ -91,7 +129,7 @@ export function DaysV2Header() {
             className={`${styles.logoImg} ${headerSolid ? styles.logoImgSolid : ""}`}
             priority
           />
-        </Link>
+        </a>
 
         <nav className={styles.nav} aria-label="Primary">
           <Link href="/" className={`${styles.navLink} ${linkActive("home") ? styles.active : ""}`} onClick={() => setOpen(false)}>
@@ -122,6 +160,47 @@ export function DaysV2Header() {
             <span>{t("gallery")}</span>
             <span className={styles.navDot} aria-hidden />
           </Link>
+          <div
+            ref={hotelsDropdownRef}
+            className={`${styles.navDropdown} ${hotelsDropdownOpen ? styles.navDropdownOpen : ""}`}
+          >
+            <button
+              type="button"
+              className={`${styles.navLink} ${styles.navDropdownTrigger}`}
+              aria-haspopup="menu"
+              aria-expanded={hotelsDropdownOpen}
+              id="days-hdr-our-hotels"
+              onClick={() => setHotelsDropdownOpen((v) => !v)}
+            >
+              <span>{t("ourHotels")}</span>
+              <span className={styles.navDropdownCaret} aria-hidden />
+            </button>
+            <div className={styles.navDropdownPanel} role="presentation">
+              <div
+                className={styles.navDropdownPanelInner}
+                role="menu"
+                aria-label={t("ourHotels")}
+                aria-labelledby="days-hdr-our-hotels"
+              >
+                {sisterIds.map((id) => (
+                  <a
+                    key={id}
+                    href={sisterMicrositeUrl(id, locale)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    role="menuitem"
+                    className={styles.navDropdownLink}
+                    onClick={() => {
+                      setHotelsDropdownOpen(false);
+                      setOpen(false);
+                    }}
+                  >
+                    {t(SISTER_SITE_LABEL_KEYS[id])}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
           <Link
             href={H(CROSSWAY_HOME.contact)}
             className={`${styles.navLink} ${linkActive("contact") ? styles.active : ""}`}
@@ -148,7 +227,16 @@ export function DaysV2Header() {
           <div className={styles.locale}>
             <LocaleSwitcher density="compact" tone={headerSolid ? "onLight" : "onDark"} />
           </div>
-          <button type="button" className={styles.menuBtn} aria-expanded={open} aria-label={t("menuToggle")} onClick={() => setOpen((v) => !v)}>
+          <button
+            type="button"
+            className={styles.menuBtn}
+            aria-expanded={open}
+            aria-label={t("menuToggle")}
+            onClick={() => {
+              setOpen((v) => !v);
+              setHotelsDropdownOpen(false);
+            }}
+          >
             <span className={`${styles.burger} ${open ? styles.burgerOpen : ""}`}>
               <span />
               <span />
@@ -190,6 +278,21 @@ export function DaysV2Header() {
               >
                 {t("gallery")}
               </Link>
+              <div className={styles.mobileGroup}>
+                <div className={styles.mobileGroupLabel}>{t("ourHotels")}</div>
+                {sisterIds.map((id) => (
+                  <a
+                    key={id}
+                    href={sisterMicrositeUrl(id, locale)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${styles.mobileLink} ${styles.mobileLinkSub}`}
+                    onClick={() => setOpen(false)}
+                  >
+                    {t(SISTER_SITE_LABEL_KEYS[id])}
+                  </a>
+                ))}
+              </div>
               <Link
                 href={H(CROSSWAY_HOME.contact)}
                 className={`${styles.mobileLink} ${linkActive("contact") ? styles.mobileLinkActive : ""}`}
