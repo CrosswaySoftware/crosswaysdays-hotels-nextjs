@@ -124,8 +124,8 @@ export function DaysV2Header() {
           <Image
             src={logoSrc}
             alt=""
-            width={168}
-            height={40}
+            width={200}
+            height={48}
             className={`${styles.logoImg} ${headerSolid ? styles.logoImgSolid : ""}`}
             priority
           />

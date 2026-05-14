@@ -44,15 +44,15 @@
   display: inline-flex;
   align-items: center;
   flex-shrink: 0;
-  /* Slot for PNG over hero — optical size reference */
-  width: 148px;
-  height: 36px;
+  overflow: visible;
+  /* Same slot hero + scrolled so the mark does not “shrink” after scroll; blue asset still scaled up */
+  width: 204px;
+  height: 50px;
 }
 
-/* Blue SVG has more internal padding in the viewBox / reads smaller — slightly larger slot + scale */
 .logoSolid {
-  width: 156px;
-  height: 38px;
+  width: 204px;
+  height: 50px;
 }
 
 .logo :global(> span) {
@@ -71,7 +71,7 @@
 }
 
 .logoImgSolid {
-  transform: scale(1.07);
+  transform: scale(1.2);
   transform-origin: left center;
 }
 
@@ -424,7 +424,7 @@
     margin: 0 auto;
     box-sizing: border-box;
     padding: 12px clamp(0.875rem, 3.5vw, 1.25rem) calc(18px + env(safe-area-inset-bottom, 0px));
-    max-height: calc(100svh - var(--ds-hdr-h, 54px) - 12px);
+    max-height: calc(100svh - var(--ds-hdr-h, 68px) - 12px);
     overflow-x: hidden;
     overflow-y: auto;
     overscroll-behavior: contain;
