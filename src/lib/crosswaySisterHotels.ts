@@ -6,8 +6,8 @@ export type SisterSiteId = "days" | "palomar" | "lifotel" | "revostay" | "petit"
 const ORIGIN: Record<SisterSiteId, string> = {
   days: "https://crosswaydayshotel.com",
   palomar: "https://palomarbycrossway.com",
-  lifotel: "https://lifotel.com",
-  revostay: "https://revostay.com",
+  lifotel: "https://kkinn.lifotel.com",
+  revostay: "https://royal.revostay.com",
   petit: "https://petitpalaiscrossway.com",
 };
 
