@@ -32,10 +32,6 @@ export function DaysContactHomeBlock() {
             {t("eventsLine2")}
           </p>
         </div>
-        <div className={styles.block}>
-          <span>{t("pressLabel")}</span>
-          <p>{t("pressText")}</p>
-        </div>
       </div>
       <DaysContactForm variant="con" />
     </div>

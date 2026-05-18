@@ -98,6 +98,7 @@ export function DaysV2Hero({ bookingSlot }: { bookingSlot: ReactNode }) {
       </div>
 
       <div className={styles.grid}>
+        <div className={styles.heroBody}>
         <div className={styles.eyeline}>
           <span>{t("coord")}</span>
           <span className={styles.line} />
@@ -108,12 +109,8 @@ export function DaysV2Hero({ bookingSlot }: { bookingSlot: ReactNode }) {
 
         <div className={styles.titleBlock}>
           <span className={styles.row}>{t("line1")}</span>
-          <span className={`${styles.row} ${styles.italic}`}>{t("line2")}</span>
-          <span className={styles.row}>{t("line3")}</span>
-          <span className={`${styles.row} ${styles.italic}`}>{t("line4")}</span>
+          <span className={styles.row}>{t("line2")}</span>
         </div>
-
-        <p className={styles.sub}>{t("sub")}</p>
 
         <div className={styles.meta}>
           <div className={styles.metaCol}>
@@ -124,10 +121,6 @@ export function DaysV2Hero({ bookingSlot }: { bookingSlot: ReactNode }) {
             <span className={styles.metaNum}>{t("numVenues")}</span>
             <span className={styles.metaLbl}>{t("metaVenues")}</span>
           </div>
-          <div className={styles.metaCol}>
-            <span className={styles.metaNum}>{t("numPlace")}</span>
-            <span className={styles.metaLbl}>{t("metaPlace")}</span>
-          </div>
           <div className={`${styles.metaCol} ${styles.metaCta}`}>
             <a href={RESAVENUE_BOOK_DIRECT_URL} className={styles.btnPrimary} target="_blank" rel="noopener noreferrer">
               {t("ctaBook")}
@@ -135,6 +128,7 @@ export function DaysV2Hero({ bookingSlot }: { bookingSlot: ReactNode }) {
             <Link href={`/#${CROSSWAY_HOME.experiences}`} className={styles.btnGhost}>
               {t("ctaDining")}
             </Link>
+          </div>
           </div>
         </div>
 

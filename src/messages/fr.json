@@ -20,7 +20,7 @@
     "accommodation": "Hébergement",
     "restaurant": "Restauration",
     "gallery": "Galerie",
-    "contact": "Nous écrire",
+    "contact": "Contactez-nous",
     "bookDirect": "Réserver en direct"
   },
   "DaysFooter": {
@@ -31,7 +31,7 @@
     "linkAccommodation": "Hébergement",
     "linkRestaurant": "Restauration",
     "linkGallery": "Galerie",
-    "linkContact": "Nous écrire",
+    "linkContact": "Contactez-nous",
     "socialTitle": "Réseaux",
     "copyright": "© {year} Crossway. Tous droits réservés."
   },
@@ -51,17 +51,13 @@
     "coord": "12.8038° N · 80.2228° E",
     "place": "Chennai · Inde",
     "titleSeo": "Days Hotel by Wyndham Chennai OMR",
-    "line1": "Crossway",
-    "line2": "Days Hotel",
-    "line3": "Old Mahabalipuram Road",
-    "line4": "Padur · Chennai",
+    "line1": "Crossway Days Hotel",
+    "line2": "Old Mahabalipuram Road · Padur · Chennai",
     "sub": "Nous redéfinissons une nouvelle dimension de luxe et de détente",
     "numRooms": "57",
     "metaRooms": "Chambres",
     "numVenues": "6",
     "metaVenues": "Restauration & banquet",
-    "numPlace": "OMR",
-    "metaPlace": "Couloir IT",
     "ctaBook": "Réserver en direct",
     "ctaDining": "Restauration",
     "dotAria": "Diapositive {n} sur {total}",
@@ -394,7 +390,7 @@
       "mapViewsLabel": "Choisir la vue"
     },
     "contact": {
-      "title": "Écrivez-nous",
+      "title": "Contactez-nous",
       "intro": "Indiquez vos dates, votre brief événement ou un message — notre équipe répond rapidement.",
       "mapTitle": "Plan et itinéraire",
       "name": "Nom",
@@ -425,7 +421,7 @@
       "fieldEmail": "02 — E-mail",
       "fieldMessage": "03 — Message",
       "placeholderName": "Nom complet",
-      "placeholderEmail": "vous@domaine.com",
+      "placeholderEmail": "Saisissez votre e-mail",
       "placeholderMessage": "Parlez-nous de votre séjour ou événement…",
       "guestFallback": "invité",
       "successNamed": "Merci, {name}. La réception vous répondra dans la journée."

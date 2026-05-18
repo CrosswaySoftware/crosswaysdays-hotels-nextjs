@@ -219,7 +219,9 @@ export function DaysV2DiningStrip({ sectionId }: { sectionId?: string }) {
               <div className={styles.dineText}>
                 <Eyebrow>{v(`kinds.${id}`)}</Eyebrow>
                 <DisplayHeading as="h2" className={styles.displayTight}>
-                  {th(`dining.${id}.title`)}
+                  <Link href={`/experiences/${block.id}`} className={styles.dineTitleLink}>
+                    {th(`dining.${id}.title`)}
+                  </Link>
                 </DisplayHeading>
                 <p>{paragraphs[0]}</p>
                 {rest.map((p, pi) => (

@@ -99,8 +99,7 @@ export function DaysV2Header() {
   const H = (id: string) => `/#${id}`;
 
   const barSolid = solid || !isHome;
-  const headerSolid = barSolid || open;
-  const logoSrc = headerSolid ? days.logoHeaderBlue : days.logoHeader;
+  const logoSrc = days.logoHeader;
 
   useEffect(() => {
     if (!open) return;
@@ -118,7 +117,7 @@ export function DaysV2Header() {
           href={CROSSWAY_CORPORATE_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className={`${styles.logo} ${headerSolid ? styles.logoSolid : ""}`}
+          className={styles.logo}
           onClick={() => setOpen(false)}
         >
           <Image
@@ -126,7 +125,7 @@ export function DaysV2Header() {
             alt=""
             width={200}
             height={48}
-            className={`${styles.logoImg} ${headerSolid ? styles.logoImgSolid : ""}`}
+            className={styles.logoImg}
             priority
           />
         </a>
@@ -225,7 +224,7 @@ export function DaysV2Header() {
             {t("bookDirect")}
           </a>
           <div className={styles.locale}>
-            <LocaleSwitcher density="compact" tone={headerSolid ? "onLight" : "onDark"} />
+            <LocaleSwitcher density="compact" tone="onDark" />
           </div>
           <button
             type="button"

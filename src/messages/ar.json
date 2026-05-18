@@ -20,7 +20,7 @@
     "accommodation": "الإقامة",
     "restaurant": "المطعم",
     "gallery": "المعرض",
-    "contact": "راسلنا",
+    "contact": "اتصل بنا",
     "bookDirect": "احجز مباشرة"
   },
   "DaysFooter": {
@@ -31,7 +31,7 @@
     "linkAccommodation": "الإقامة",
     "linkRestaurant": "المطعم",
     "linkGallery": "المعرض",
-    "linkContact": "راسلنا",
+    "linkContact": "اتصل بنا",
     "socialTitle": "التواصل",
     "copyright": "© {year} كروسواي. جميع الحقوق محفوظة."
   },
@@ -51,17 +51,13 @@
     "coord": "12.8038° N · 80.2228° E",
     "place": "تشيناي · الهند",
     "titleSeo": "دايز هوتيل باي ويندام تشيناي أومر",
-    "line1": "كروسواي",
-    "line2": "دايز هوتيل",
-    "line3": "طريق مهاباليپورام القديم",
-    "line4": "بادور · تشيناي",
+    "line1": "كروسواي دايز هوتيل",
+    "line2": "طريق مهاباليپورام القديم · بادور · تشيناي",
     "sub": "نهدف إلى إعادة تعريف بُعد جديد من الفخامة والاسترخاء",
     "numRooms": "57",
     "metaRooms": "غرف وأجنحة",
     "numVenues": "6",
     "metaVenues": "مطاعم وولائم وسبا",
-    "numPlace": "أومر",
-    "metaPlace": "المنطقة التقنية",
     "ctaBook": "احجز مباشرة",
     "ctaDining": "المطاعم",
     "dotAria": "شريحة {n} من {total}",
@@ -470,7 +466,7 @@
       "mapViewsLabel": "اختر عرض الخريطة"
     },
     "contact": {
-      "title": "راسلنا",
+      "title": "اتصل بنا",
       "intro": "أرسل تواريخك أو موجز فعاليتك أو ملاحظاتك — فريق الحجز يجيب بسرعة.",
       "mapTitle": "الخريطة والاتجاهات",
       "name": "الاسم",
@@ -501,7 +497,7 @@
       "fieldEmail": "02 — البريد",
       "fieldMessage": "03 — الرسالة",
       "placeholderName": "الاسم الكامل",
-      "placeholderEmail": "you@domain.com",
+      "placeholderEmail": "أدخل بريدك الإلكتروني",
       "placeholderMessage": "صف إقامتك أو فعاليتك…",
       "guestFallback": "ضيف",
       "successNamed": "شكراً، {name}. سيرد مكتب الاستقبال خلال اليوم."

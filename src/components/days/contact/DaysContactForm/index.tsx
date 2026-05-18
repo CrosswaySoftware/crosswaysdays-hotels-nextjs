@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { useState } from "react";
 import styles from "./DaysContactForm.module.scss";
 
-const PURPOSE_KEYS = ["stay", "event", "dining", "press"] as const;
+const PURPOSE_KEYS = ["stay", "event", "dining"] as const;
 
 export function DaysContactForm({ variant = "stacked" }: { variant?: "stacked" | "con" }) {
   const t = useTranslations("DaysHome.contact");
