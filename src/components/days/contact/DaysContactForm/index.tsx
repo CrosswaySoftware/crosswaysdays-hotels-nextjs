@@ -1,5 +1,7 @@
 "use client";
 
+import { sendContactEmail } from "@/lib/sendEmail";
+import { SITE_BRAND_NAME } from "@/lib/siteBrand";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import styles from "./DaysContactForm.module.scss";
@@ -24,18 +26,14 @@ export function DaysContactForm({ variant = "stacked" }: { variant?: "stacked" |
     setPending(true);
     setStatus("idle");
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name,
-          email,
-          message,
-          botcheck: "",
-          purpose: variant === "con" ? purpose : undefined,
-        }),
+      const ok = await sendContactEmail({
+        brandName: SITE_BRAND_NAME,
+        name,
+        email,
+        message,
+        purpose: variant === "con" ? purpose : undefined,
       });
-      if (res.ok) {
+      if (ok) {
         setLastName(name);
         setStatus("ok");
       } else {
