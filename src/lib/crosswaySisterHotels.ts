@@ -7,7 +7,7 @@ const ORIGIN: Record<SisterSiteId, string> = {
   days: "https://crosswaydayshotel.com",
   palomar: "https://palomarbycrossway.com",
   lifotel: "https://kkinn.lifotel.com",
-  revostay: "https://royal.revostay.com",
+  revostay: "https://royel.revostay.com",
   petit: "https://petitpalaiscrossway.com",
 };
 
